@@ -41,7 +41,7 @@ function formatResultOnly(response: Awaited<ReturnType<typeof runPrompt>>): stri
   }
 
   if (normalized?.records && normalized.records.length > 0) {
-    return JSON.stringify(normalized.records, null, 2);
+    return formatRecordsAsTable(normalized.records);
   }
 
   if (typeof normalized?.count === "number") {
@@ -65,4 +65,34 @@ function htmlToPlainText(html: string): string {
     .replace(/\n{3,}/g, "\n\n")
     .replace(/[ \t]+/g, " ")
     .trim();
+}
+
+function formatRecordsAsTable(records: Array<Record<string, unknown>>): string {
+  const keys = Array.from(
+    new Set(records.flatMap((record) => Object.keys(record)))
+  );
+
+  if (keys.length === 0) {
+    return "No records found.";
+  }
+
+  const widths = keys.map((key) => {
+    const maxValueWidth = Math.max(
+      ...records.map((record) => String(record[key] ?? "").length)
+    );
+    return Math.max(key.length, maxValueWidth);
+  });
+
+  const makeRow = (values: string[]) =>
+    `| ${values
+      .map((value, index) => value.padEnd(widths[index], " "))
+      .join(" | ")} |`;
+
+  const header = makeRow(keys);
+  const divider = `| ${widths.map((w) => "-".repeat(w)).join(" | ")} |`;
+  const rows = records.map((record) =>
+    makeRow(keys.map((key) => String(record[key] ?? "")))
+  );
+
+  return [header, divider, ...rows].join("\n");
 }
