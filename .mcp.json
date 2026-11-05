@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "servicenow-local-bridge": {
+      "command": "node",
+      "args": [
+        "${workspaceFolder}/dist/index.js"
+      ]
+    }
+  }
+}

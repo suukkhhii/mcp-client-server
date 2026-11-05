@@ -1,0 +1,5 @@
+{
+  "chat.mcp.access": true,
+  "chat.agent.enabled": true,
+  "chat.mcp.workspaceRootConfig.enabled": true
+}
