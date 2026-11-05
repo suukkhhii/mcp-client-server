@@ -306,7 +306,8 @@ npm run prompt -- "please help me with incident details INC1639945"
 
 ### 11.2) Requirements
 
-- Environment variables must be set in current shell (same as MCPorter commands).
+- Prompt command auto-loads variables from `.env`.
+- Ensure `.env` has valid ServiceNow and proxy values.
 - `.mcp.json` must point to your local `dist/index.js`.
 
 ### 11.3) Performance optimizations in prompt mode

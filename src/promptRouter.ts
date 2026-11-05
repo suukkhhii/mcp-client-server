@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { runPrompt } from "./agent/orchestrator/promptRunner.js";
 
 async function main() {
