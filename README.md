@@ -143,4 +143,74 @@ Set in `.env`:
 
 Example:
 
-`HTTPS_PROXY=http://proxy.company.local:8080`
+```dotenv
+HTTPS_PROXY=http://proxy.company.local:8080
+HTTP_PROXY=http://proxy.company.local:8080
+NO_PROXY=localhost,127.0.0.1
+```
+
+For local loopback proxies (like `localhost:9000`):
+
+```dotenv
+HTTPS_PROXY=http://localhost:9000
+HTTP_PROXY=http://localhost:9000
+NO_PROXY=localhost,127.0.0.1
+```
+
+### 9.1) PowerShell session proxy commands (Windows)
+
+Use these commands when running tests manually in a terminal session:
+
+```powershell
+$env:NODE_USE_ENV_PROXY = "1"
+$env:NODE_OPTIONS = "--use-env-proxy"
+$env:HTTP_PROXY = "http://localhost:9000"
+$env:HTTPS_PROXY = "http://localhost:9000"
+$env:NO_PROXY = "localhost,127.0.0.1"
+```
+
+Then run:
+
+```powershell
+npm run test:smoke
+```
+
+### 9.2) Verify proxy listener
+
+```powershell
+Test-NetConnection localhost -Port 9000
+```
+
+Expected:
+
+- `TcpTestSucceeded : True`
+
+### 9.3) Git over proxy (if push/pull fails)
+
+Configure Git for the current repository:
+
+```powershell
+git config http.proxy "http://localhost:9000"
+git config https.proxy "http://localhost:9000"
+```
+
+Push example:
+
+```powershell
+git push -u origin main
+```
+
+Clear Git proxy config later if not needed:
+
+```powershell
+git config --unset http.proxy
+git config --unset https.proxy
+```
+
+### 9.4) Proxy troubleshooting checklist
+
+1. Confirm proxy process is running on expected port.
+2. Confirm `HTTPS_PROXY` is set (most ServiceNow calls are HTTPS).
+3. Confirm `NO_PROXY` includes only local bypass hosts.
+4. Re-run `npm run test:smoke` and verify token acquisition succeeds.
+5. If `git push` fails with DNS/host resolution, set Git proxy as above.
