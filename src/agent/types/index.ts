@@ -13,8 +13,17 @@ export type ToolInvocation = {
   tool: string;
   args: string[];
   durationMs?: number;
+  cached?: boolean;
   success: boolean;
   error?: string;
+};
+
+export type PromptRunMetrics = {
+  totalMs: number;
+  routeMs: number;
+  toolCallMs: number;
+  cacheHit: boolean;
+  fallbackUsed: boolean;
 };
 
 export type PromptResponseEnvelope = {
@@ -24,6 +33,7 @@ export type PromptResponseEnvelope = {
   reason: string;
   toolInvocations: ToolInvocation[];
   rawResult?: string;
+  metrics?: PromptRunMetrics;
   normalized?: {
     incidentNumber?: string;
     summaryHtml?: string;

@@ -309,6 +309,29 @@ npm run prompt -- "please help me with incident details INC1639945"
 - Environment variables must be set in current shell (same as MCPorter commands).
 - `.mcp.json` must point to your local `dist/index.js`.
 
+### 11.3) Performance optimizations in prompt mode
+
+Prompt mode now includes local latency optimizations:
+
+- In-memory response cache:
+  - lookup results TTL default: `60s`
+  - summarization results TTL default: `10m`
+  - persisted to `.cache/prompt-cache.json` so repeated `npm run prompt` calls can reuse warm results
+- Timing metrics in response envelope:
+  - `metrics.totalMs`, `metrics.routeMs`, `metrics.toolCallMs`
+  - `metrics.cacheHit`, `metrics.fallbackUsed`
+- Slow summarization warning when soft threshold is exceeded.
+- Summarization fallback:
+  - if `incident_summarization` fails, router falls back to `look_up_incident_records` for the same incident.
+
+Optional environment overrides:
+
+```dotenv
+PROMPT_CACHE_LOOKUP_TTL_MS=60000
+PROMPT_CACHE_SUMMARY_TTL_MS=600000
+PROMPT_SUMMARY_SOFT_TIMEOUT_MS=30000
+```
+
 ## 12) Separated Agent Logic (router + orchestrator)
 
 Prompt handling logic is separated from MCP bridge code under:
