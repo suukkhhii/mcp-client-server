@@ -16,6 +16,11 @@ type McpHttpClientOptions = {
   logger: Logger;
 };
 
+type BuiltPayload = {
+  payload: JsonRecord;
+  requestId?: number;
+};
+
 export class McpHttpClient {
   private readonly mcpUrl: string;
   private readonly tokenManager?: OAuthTokenManager;
@@ -75,7 +80,8 @@ export class McpHttpClient {
     params?: JsonRecord
   ): Promise<T> {
     const authHeaders = await this.getAuthHeaders();
-    const payload = this.buildPayload(shape, method, params);
+    const built = this.buildPayload(shape, method, params);
+    const payload = built.payload;
 
     const firstResponse = await this.sendRequest(authHeaders, payload);
     if (firstResponse.status === 401 && this.tokenManager) {
@@ -86,10 +92,22 @@ export class McpHttpClient {
         { Authorization: `Bearer ${refreshedToken}` },
         payload
       );
-      return this.handleResponse<T>(shape, method, retryResponse.status, retryResponse.bodyText);
+      return this.handleResponse<T>(
+        shape,
+        method,
+        retryResponse.status,
+        retryResponse.bodyText,
+        built.requestId
+      );
     }
 
-    return this.handleResponse<T>(shape, method, firstResponse.status, firstResponse.bodyText);
+    return this.handleResponse<T>(
+      shape,
+      method,
+      firstResponse.status,
+      firstResponse.bodyText,
+      built.requestId
+    );
   }
 
   private async sendRequest(
@@ -116,7 +134,8 @@ export class McpHttpClient {
     return { status: response.status, bodyText };
   }
 
-  private buildPayload(shape: PayloadShape, method: string, params?: JsonRecord): JsonRecord {
+  private buildPayload(shape: PayloadShape, method: string, params?: JsonRecord): BuiltPayload {
+    const requestId = this.requestIdCounter++;
     const baseRequest = {
       method,
       ...(params ? { params } : {})
@@ -124,45 +143,70 @@ export class McpHttpClient {
 
     if (shape === "request-wrapper") {
       return {
-        request: {
-          jsonrpc: "2.0",
-          id: this.requestIdCounter++,
-          ...baseRequest
-        }
+        payload: {
+          request: {
+            jsonrpc: "2.0",
+            id: requestId,
+            ...baseRequest
+          }
+        },
+        requestId
       };
     }
 
     if (shape === "plain") {
-      return baseRequest;
+      return {
+        payload: baseRequest
+      };
     }
 
     return {
-      jsonrpc: "2.0",
-      id: this.requestIdCounter++,
-      ...baseRequest
+      payload: {
+        jsonrpc: "2.0",
+        id: requestId,
+        ...baseRequest
+      },
+      requestId
     };
   }
 
-  private handleResponse<T>(shape: PayloadShape, method: string, status: number, bodyText: string): T {
+  private handleResponse<T>(
+    shape: PayloadShape,
+    method: string,
+    status: number,
+    bodyText: string,
+    expectedRequestId?: number
+  ): T {
     const parsed = parseJsonSafely(bodyText);
+    const parsedCandidate = selectBestMcpMessage(parsed, expectedRequestId);
 
     if (status >= 400) {
-      throw new HttpStatusError(status, extractErrorMessage(parsed) ?? `HTTP ${status}`, parsed);
+      throw new HttpStatusError(
+        status,
+        extractErrorMessage(parsedCandidate ?? parsed) ?? `HTTP ${status}`,
+        parsedCandidate ?? parsed
+      );
     }
 
     if (shape === "plain") {
-      if (isJsonRecord(parsed) && Object.prototype.hasOwnProperty.call(parsed, "error")) {
-        throw new RemoteMcpError(extractErrorMessage((parsed as JsonRecord).error) ?? "Remote MCP error", parsed);
+      const plainCandidate = parsedCandidate ?? parsed;
+
+      if (isJsonRecord(plainCandidate) && Object.prototype.hasOwnProperty.call(plainCandidate, "error")) {
+        throw new RemoteMcpError(
+          extractErrorMessage((plainCandidate as JsonRecord).error) ?? "Remote MCP error",
+          plainCandidate
+        );
       }
 
-      if (isJsonRecord(parsed) && Object.prototype.hasOwnProperty.call(parsed, "result")) {
-        return (parsed as JsonRecord).result as T;
+      if (isJsonRecord(plainCandidate) && Object.prototype.hasOwnProperty.call(plainCandidate, "result")) {
+        return (plainCandidate as JsonRecord).result as T;
       }
 
-      return parsed as T;
+      return plainCandidate as T;
     }
 
-    const unwrapped = unwrapResponseEnvelope(parsed);
+    const candidate = parsedCandidate ?? parsed;
+    const unwrapped = unwrapResponseEnvelope(candidate);
     if (unwrapped !== parsed) {
       if (isJsonRecord(unwrapped) && Object.prototype.hasOwnProperty.call(unwrapped, "error")) {
         throw new RemoteMcpError(
@@ -233,20 +277,25 @@ function parseJsonSafely(text: string): unknown {
   }
 
   const sseParsed = tryParseSseDataJson(text);
-  if (sseParsed !== undefined) {
-    return sseParsed;
+  if (sseParsed.length > 0) {
+    return sseParsed.length === 1 ? sseParsed[0] : sseParsed;
   }
 
   try {
     return JSON.parse(text);
   } catch {
+    const manyJson = tryParseManyJsonObjects(text);
+    if (manyJson.length > 0) {
+      return manyJson.length === 1 ? manyJson[0] : manyJson;
+    }
+
     return { raw: text };
   }
 }
 
-function tryParseSseDataJson(text: string): unknown | undefined {
+function tryParseSseDataJson(text: string): unknown[] {
   if (!/^(event:|data:)/m.test(text)) {
-    return undefined;
+    return [];
   }
 
   const dataLines = text
@@ -255,15 +304,64 @@ function tryParseSseDataJson(text: string): unknown | undefined {
     .map((line) => line.slice(5).trim())
     .filter((line) => line.length > 0 && line !== "[DONE]");
 
+  const parsedMessages: unknown[] = [];
   for (const line of dataLines) {
     try {
-      return JSON.parse(line);
+      parsedMessages.push(JSON.parse(line));
     } catch {
       continue;
     }
   }
 
-  return undefined;
+  return parsedMessages;
+}
+
+function tryParseManyJsonObjects(text: string): unknown[] {
+  const lines = text
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter((line) => line.length > 0);
+
+  const parsed: unknown[] = [];
+  for (const line of lines) {
+    try {
+      parsed.push(JSON.parse(line));
+    } catch {
+      continue;
+    }
+  }
+  return parsed;
+}
+
+function selectBestMcpMessage(value: unknown, expectedRequestId?: number): unknown {
+  if (!Array.isArray(value)) {
+    return value;
+  }
+
+  if (value.length === 0) {
+    return {};
+  }
+
+  if (expectedRequestId !== undefined) {
+    const exactMatch = value.find((entry) => {
+      if (!isJsonRecord(entry)) {
+        return false;
+      }
+      return entry.id === expectedRequestId && ("result" in entry || "error" in entry);
+    });
+    if (exactMatch) {
+      return exactMatch;
+    }
+  }
+
+  const resultLike = value.find(
+    (entry) => isJsonRecord(entry) && ("result" in entry || "error" in entry)
+  );
+  if (resultLike) {
+    return resultLike;
+  }
+
+  return value[value.length - 1];
 }
 
 function unwrapResponseEnvelope(value: unknown): unknown {

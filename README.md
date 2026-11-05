@@ -214,3 +214,63 @@ git config --unset https.proxy
 3. Confirm `NO_PROXY` includes only local bypass hosts.
 4. Re-run `npm run test:smoke` and verify token acquisition succeeds.
 5. If `git push` fails with DNS/host resolution, set Git proxy as above.
+
+## 10) Using MCPorter from terminal
+
+This project can be used with MCPorter CLI directly.
+
+### 10.1) MCPorter config in this repo
+
+Use workspace-root `.mcp.json` for MCPorter:
+
+- server name: `servicenow-local-bridge`
+- command: `node`
+- args: absolute path to `dist/index.js`
+
+Note:
+
+- MCPorter does not resolve VS Code placeholders like `${workspaceFolder}`.
+- Keep real credentials in environment variables (or `.env` loaded into shell before running).
+
+### 10.2) Typical PowerShell session setup
+
+```powershell
+$env:NODE_USE_ENV_PROXY = "1"
+$env:NODE_OPTIONS = "--use-env-proxy"
+
+$env:SN_INSTANCE_URL = "https://your-instance.service-now.com"
+$env:SN_MCP_URL = "https://your-instance.service-now.com/sncapps/mcp-server/mcp/sn_mcp_server_default"
+$env:SN_OAUTH_TOKEN_URL = "https://your-instance.service-now.com/oauth_token.do"
+$env:SN_CLIENT_ID = "<your-client-id>"
+$env:SN_CLIENT_SECRET = "<your-client-secret>"
+$env:SN_AUTH_MODE = "oauth"
+
+$env:HTTPS_PROXY = "http://localhost:9000"
+$env:HTTP_PROXY = "http://localhost:9000"
+$env:NO_PROXY = "localhost,127.0.0.1"
+```
+
+### 10.3) List tools
+
+```powershell
+npx --yes mcporter --config ".\.mcp.json" list servicenow-local-bridge --schema --timeout 120000
+```
+
+### 10.4) Call tools
+
+Fetch one incident:
+
+```powershell
+npx --yes mcporter --config ".\.mcp.json" call servicenow-local-bridge.look_up_incident_records limit=1
+```
+
+Summarize a specific incident:
+
+```powershell
+$env:MCPORTER_CALL_TIMEOUT = "180000"
+npx --yes mcporter --config ".\.mcp.json" call servicenow-local-bridge.incident_summarization incidentNumber=INC1234567 --timeout 180000
+```
+
+Why larger timeout?
+
+- `incident_summarization` can take longer in ServiceNow, so increase call timeout to avoid false failures.

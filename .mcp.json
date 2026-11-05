@@ -3,8 +3,20 @@
     "servicenow-local-bridge": {
       "command": "node",
       "args": [
-        "${workspaceFolder}/dist/index.js"
-      ]
+        "y:/Desktop/Projects/Cloud/ServiceNow SDK/SDK-Projects/mcp-client-server/dist/index.js"
+      ],
+      "env": {
+        "SN_INSTANCE_URL": "${SN_INSTANCE_URL}",
+        "SN_MCP_URL": "${SN_MCP_URL}",
+        "SN_OAUTH_TOKEN_URL": "${SN_OAUTH_TOKEN_URL}",
+        "SN_CLIENT_ID": "${SN_CLIENT_ID}",
+        "SN_CLIENT_SECRET": "${SN_CLIENT_SECRET}",
+        "SN_OAUTH_SCOPE": "${SN_OAUTH_SCOPE:-}",
+        "SN_AUTH_MODE": "${SN_AUTH_MODE:-oauth}",
+        "HTTPS_PROXY": "${HTTPS_PROXY:-}",
+        "HTTP_PROXY": "${HTTP_PROXY:-}",
+        "NO_PROXY": "${NO_PROXY:-localhost,127.0.0.1}"
+      }
     }
   }
 }

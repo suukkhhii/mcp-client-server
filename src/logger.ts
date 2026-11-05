@@ -1,21 +1,24 @@
 import pino from "pino";
 
 export function createLogger(level: pino.Level) {
-  return pino({
-    level,
-    redact: {
-      paths: [
-        "clientSecret",
-        "token",
-        "access_token",
-        "headers.authorization",
-        "authorization",
-        "request.headers.authorization",
-        "response.config.headers.authorization"
-      ],
-      censor: "[REDACTED]"
-    }
-  });
+  return pino(
+    {
+      level,
+      redact: {
+        paths: [
+          "clientSecret",
+          "token",
+          "access_token",
+          "headers.authorization",
+          "authorization",
+          "request.headers.authorization",
+          "response.config.headers.authorization"
+        ],
+        censor: "[REDACTED]"
+      }
+    },
+    pino.destination(2)
+  );
 }
 
 export function redactBearer(token: string): string {
