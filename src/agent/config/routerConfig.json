@@ -1,0 +1,28 @@
+{
+  "defaultServer": "servicenow-local-bridge",
+  "defaultTimeoutMs": 180000,
+  "lookup": {
+    "defaultLimit": 5,
+    "maxLimit": 100,
+    "statusKeywords": {
+      "open": "1",
+      "new": "1",
+      "in progress": "2",
+      "progress": "2",
+      "on hold": "3",
+      "hold": "3",
+      "resolved": "6",
+      "closed": "7",
+      "cancelled": "8",
+      "canceled": "8"
+    },
+    "priorityKeywords": {
+      "critical": "1",
+      "high": "2",
+      "medium": "3",
+      "moderate": "3",
+      "low": "4",
+      "planning": "5"
+    }
+  }
+}

@@ -274,3 +274,62 @@ npx --yes mcporter --config ".\.mcp.json" call servicenow-local-bridge.incident_
 Why larger timeout?
 
 - `incident_summarization` can take longer in ServiceNow, so increase call timeout to avoid false failures.
+
+## 11) Natural-language prompt router (auto tool selection)
+
+If you want prompts like:
+
+- `please help me with incident details INC12345`
+
+you can use the built-in prompt router script.
+
+### 11.1) Run with a prompt
+
+```powershell
+npm run prompt -- "please help me with incident details INC1639945"
+```
+
+Behavior:
+
+- If an incident number like `INC12345` is found, router calls:
+  - `incident_summarization`
+- If no incident number is found, router calls:
+  - `look_up_incident_records` (default `limit=5`)
+  - and applies simple status/priority parsing from prompt text.
+
+Examples:
+
+```powershell
+npm run prompt -- "show top 3 high priority open incidents"
+npm run prompt -- "please help me with incident details INC1639945"
+```
+
+### 11.2) Requirements
+
+- Environment variables must be set in current shell (same as MCPorter commands).
+- `.mcp.json` must point to your local `dist/index.js`.
+
+## 12) Separated Agent Logic (router + orchestrator)
+
+Prompt handling logic is separated from MCP bridge code under:
+
+- `src/agent/config`
+- `src/agent/router`
+- `src/agent/orchestrator`
+- `src/agent/types`
+
+Design:
+
+1. Router maps prompt -> tool selection + args + confidence
+2. Orchestrator executes MCPorter call
+3. Response is normalized into an envelope with insights and warnings
+
+Run:
+
+```powershell
+npm run prompt -- "please help me with incident details INC1639945"
+```
+
+Output:
+
+- JSON envelope containing selected intent, tool invocation details, normalized result, and insight bullets.
