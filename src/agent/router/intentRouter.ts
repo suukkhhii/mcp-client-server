@@ -59,6 +59,11 @@ function buildLookupArgs(text: string): string[] {
     args.push(`priority=${priority}`);
   }
 
+  const assignedTo = extractAssignedTo(text);
+  if (assignedTo) {
+    args.push(`assigned_to=${assignedTo}`);
+  }
+
   args.push("--timeout", String(getCallTimeout()));
   return args;
 }
@@ -88,4 +93,26 @@ function getCallTimeout(): number {
     return parsed;
   }
   return config.defaultTimeoutMs;
+}
+
+function extractAssignedTo(text: string): string | undefined {
+  const patterns = [
+    /assigned to\s+"([^"]+)"/i,
+    /assigned to\s+'([^']+)'/i,
+    /assigned to\s+([a-z][a-z\s.-]{1,80})/i
+  ];
+
+  for (const pattern of patterns) {
+    const match = text.match(pattern);
+    if (!match || !match[1]) {
+      continue;
+    }
+
+    const value = match[1].trim().replace(/[.?!,;:]$/, "");
+    if (value.length > 1) {
+      return value;
+    }
+  }
+
+  return undefined;
 }

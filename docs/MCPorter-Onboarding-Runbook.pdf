@@ -1,0 +1,883 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 8 /Kids [ 3 0 R 5 0 R 7 0 R 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R ] >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 19 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 3019 >>
+stream
+BT
+/F1 10 Tf
+1 0 0 1 40 802 Tm
+(# ServiceNow MCP Bridge and MCPorter Runbook) Tj
+1 0 0 1 40 788 Tm
+() Tj
+1 0 0 1 40 774 Tm
+(Version: 1.0) Tj
+1 0 0 1 40 760 Tm
+(Last Updated: 2026-11-06) Tj
+1 0 0 1 40 746 Tm
+(Audience: Engineers onboarding to the ServiceNow MCP bridge project) Tj
+1 0 0 1 40 732 Tm
+() Tj
+1 0 0 1 40 718 Tm
+(## 1. Executive Summary) Tj
+1 0 0 1 40 704 Tm
+() Tj
+1 0 0 1 40 690 Tm
+(This runbook explains why MCPorter was required in this project, how it was introduced, and how to operate the full solution in a production-like way.) Tj
+1 0 0 1 40 676 Tm
+() Tj
+1 0 0 1 40 662 Tm
+(The target user experience is:) Tj
+1 0 0 1 40 648 Tm
+() Tj
+1 0 0 1 40 634 Tm
+(1. User writes a natural-language prompt.) Tj
+1 0 0 1 40 620 Tm
+(2. System routes to the correct ServiceNow MCP tool.) Tj
+1 0 0 1 40 606 Tm
+(3. System returns formatted results only.) Tj
+1 0 0 1 40 592 Tm
+(4. User does not run low-level tool commands.) Tj
+1 0 0 1 40 578 Tm
+() Tj
+1 0 0 1 40 564 Tm
+(## 2. Why MCPorter Was Needed) Tj
+1 0 0 1 40 550 Tm
+() Tj
+1 0 0 1 40 536 Tm
+(### 2.1 Original objective) Tj
+1 0 0 1 40 522 Tm
+() Tj
+1 0 0 1 40 508 Tm
+(The project needed a local MCP bridge that:) Tj
+1 0 0 1 40 494 Tm
+() Tj
+1 0 0 1 40 480 Tm
+(1. Runs as an MCP server over stdio.) Tj
+1 0 0 1 40 466 Tm
+(2. Connects to ServiceNow MCP over HTTP.) Tj
+1 0 0 1 40 452 Tm
+(3. Authenticates with OAuth client credentials.) Tj
+1 0 0 1 40 438 Tm
+(4. Proxies `initialize`, `tools/list`, and `tools/call`.) Tj
+1 0 0 1 40 424 Tm
+() Tj
+1 0 0 1 40 410 Tm
+(### 2.2 Constraint encountered) Tj
+1 0 0 1 40 396 Tm
+() Tj
+1 0 0 1 40 382 Tm
+(Direct VS Code MCP usage was blocked by enterprise policy in this environment. Even with local config, the editor integration could be unavailable due to org restrictions.) Tj
+1 0 0 1 40 368 Tm
+() Tj
+1 0 0 1 40 354 Tm
+(### 2.3 Why MCPorter solved it) Tj
+1 0 0 1 40 340 Tm
+() Tj
+1 0 0 1 40 326 Tm
+(MCPorter provided a terminal-accessible MCP client path that allowed:) Tj
+1 0 0 1 40 312 Tm
+() Tj
+1 0 0 1 40 298 Tm
+(1. Listing MCP tools.) Tj
+1 0 0 1 40 284 Tm
+(2. Calling tools deterministically.) Tj
+1 0 0 1 40 270 Tm
+(3. Testing connectivity/auth/proxy independent of editor policy.) Tj
+1 0 0 1 40 256 Tm
+(4. Fast diagnosis of payload/timeout/response-shape issues.) Tj
+1 0 0 1 40 242 Tm
+() Tj
+1 0 0 1 40 228 Tm
+(In short, MCPorter became the practical test and operations harness while preserving the same bridge logic.) Tj
+1 0 0 1 40 214 Tm
+() Tj
+1 0 0 1 40 200 Tm
+(## 3. Solution Architecture) Tj
+1 0 0 1 40 186 Tm
+() Tj
+1 0 0 1 40 172 Tm
+(## 3.1 Components) Tj
+1 0 0 1 40 158 Tm
+() Tj
+1 0 0 1 40 144 Tm
+(1. Local Node.js bridge \(`dist/index.js`\) exposing stdio MCP server.) Tj
+1 0 0 1 40 130 Tm
+(2. ServiceNow MCP HTTP endpoint.) Tj
+1 0 0 1 40 116 Tm
+(3. OAuth token manager with refresh/retry.) Tj
+1 0 0 1 40 102 Tm
+(4. Prompt router and orchestrator for natural-language requests.) Tj
+1 0 0 1 40 88 Tm
+(5. Formatted result rendering for CLI output.) Tj
+1 0 0 1 40 74 Tm
+() Tj
+1 0 0 1 40 60 Tm
+(## 3.2 High-level flow) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 19 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 2922 >>
+stream
+BT
+/F1 10 Tf
+1 0 0 1 40 802 Tm
+() Tj
+1 0 0 1 40 788 Tm
+(1. User runs `npm run prompt -- "..."`.) Tj
+1 0 0 1 40 774 Tm
+(2. Prompt router chooses tool and parameters.) Tj
+1 0 0 1 40 760 Tm
+(3. Orchestrator calls ServiceNow MCP through bridge runtime.) Tj
+1 0 0 1 40 746 Tm
+(4. Response is normalized and formatted.) Tj
+1 0 0 1 40 732 Tm
+(5. User sees only final result.) Tj
+1 0 0 1 40 718 Tm
+() Tj
+1 0 0 1 40 704 Tm
+(## 4. Repository Structure) Tj
+1 0 0 1 40 690 Tm
+() Tj
+1 0 0 1 40 676 Tm
+(Key files and folders:) Tj
+1 0 0 1 40 662 Tm
+() Tj
+1 0 0 1 40 648 Tm
+(1. `src/index.ts` - stdio MCP bridge server.) Tj
+1 0 0 1 40 634 Tm
+(2. `src/config.ts` - env parsing and validation.) Tj
+1 0 0 1 40 620 Tm
+(3. `src/oauthTokenManager.ts` - OAuth token lifecycle.) Tj
+1 0 0 1 40 606 Tm
+(4. `src/mcpHttpClient.ts` - remote MCP HTTP client and parsing.) Tj
+1 0 0 1 40 592 Tm
+(5. `src/proxy.ts` - proxy setup from env.) Tj
+1 0 0 1 40 578 Tm
+(6. `src/promptRouter.ts` - prompt entrypoint and output formatting.) Tj
+1 0 0 1 40 564 Tm
+(7. `src/agent/router/intentRouter.ts` - intent-to-tool mapping.) Tj
+1 0 0 1 40 550 Tm
+(8. `src/agent/orchestrator/promptRunner.ts` - execution and normalization.) Tj
+1 0 0 1 40 536 Tm
+(9. `src/agent/orchestrator/mcpRuntimeClient.ts` - in-process tool runtime client.) Tj
+1 0 0 1 40 522 Tm
+(10. `.mcp.json` - MCPorter server configuration.) Tj
+1 0 0 1 40 508 Tm
+(11. `.env.example` - required and optional environment variables.) Tj
+1 0 0 1 40 494 Tm
+(12. `README.md` - project usage reference.) Tj
+1 0 0 1 40 480 Tm
+() Tj
+1 0 0 1 40 466 Tm
+(## 5. Prerequisites) Tj
+1 0 0 1 40 452 Tm
+() Tj
+1 0 0 1 40 438 Tm
+(1. Windows PowerShell \(or compatible shell\).) Tj
+1 0 0 1 40 424 Tm
+(2. Node.js 20+.) Tj
+1 0 0 1 40 410 Tm
+(3. npm 10+.) Tj
+1 0 0 1 40 396 Tm
+(4. ServiceNow OAuth client credentials.) Tj
+1 0 0 1 40 382 Tm
+(5. ServiceNow MCP endpoint URL.) Tj
+1 0 0 1 40 368 Tm
+(6. Corporate proxy details if required.) Tj
+1 0 0 1 40 354 Tm
+() Tj
+1 0 0 1 40 340 Tm
+(## 6. One-time Project Setup) Tj
+1 0 0 1 40 326 Tm
+() Tj
+1 0 0 1 40 312 Tm
+(## 6.1 Install dependencies) Tj
+1 0 0 1 40 298 Tm
+() Tj
+1 0 0 1 40 284 Tm
+(```powershell) Tj
+1 0 0 1 40 270 Tm
+(npm install) Tj
+1 0 0 1 40 256 Tm
+(```) Tj
+1 0 0 1 40 242 Tm
+() Tj
+1 0 0 1 40 228 Tm
+(## 6.2 Create `.env`) Tj
+1 0 0 1 40 214 Tm
+() Tj
+1 0 0 1 40 200 Tm
+(Create `.env` in repo root with real values.) Tj
+1 0 0 1 40 186 Tm
+() Tj
+1 0 0 1 40 172 Tm
+(Template:) Tj
+1 0 0 1 40 158 Tm
+() Tj
+1 0 0 1 40 144 Tm
+(```dotenv) Tj
+1 0 0 1 40 130 Tm
+(SN_INSTANCE_URL=https://your-instance.service-now.com) Tj
+1 0 0 1 40 116 Tm
+(SN_MCP_URL=https://your-instance.service-now.com/sncapps/mcp-server/mcp/sn_mcp_server_default) Tj
+1 0 0 1 40 102 Tm
+(SN_OAUTH_TOKEN_URL=https://your-instance.service-now.com/oauth_token.do) Tj
+1 0 0 1 40 88 Tm
+(SN_CLIENT_ID=your_client_id) Tj
+1 0 0 1 40 74 Tm
+(SN_CLIENT_SECRET=your_client_secret) Tj
+1 0 0 1 40 60 Tm
+(SN_AUTH_MODE=oauth) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 19 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 2195 >>
+stream
+BT
+/F1 10 Tf
+1 0 0 1 40 802 Tm
+(SN_OAUTH_SCOPE=) Tj
+1 0 0 1 40 788 Tm
+() Tj
+1 0 0 1 40 774 Tm
+(LOG_LEVEL=info) Tj
+1 0 0 1 40 760 Tm
+() Tj
+1 0 0 1 40 746 Tm
+(HTTPS_PROXY=http://localhost:9000) Tj
+1 0 0 1 40 732 Tm
+(HTTP_PROXY=http://localhost:9000) Tj
+1 0 0 1 40 718 Tm
+(NO_PROXY=localhost,127.0.0.1) Tj
+1 0 0 1 40 704 Tm
+() Tj
+1 0 0 1 40 690 Tm
+(MCPORTER_CALL_TIMEOUT=180000) Tj
+1 0 0 1 40 676 Tm
+(PROMPT_VERBOSE=0) Tj
+1 0 0 1 40 662 Tm
+(PROMPT_CACHE_LOOKUP_TTL_MS=60000) Tj
+1 0 0 1 40 648 Tm
+(PROMPT_CACHE_SUMMARY_TTL_MS=600000) Tj
+1 0 0 1 40 634 Tm
+(PROMPT_SUMMARY_SOFT_TIMEOUT_MS=30000) Tj
+1 0 0 1 40 620 Tm
+(```) Tj
+1 0 0 1 40 606 Tm
+() Tj
+1 0 0 1 40 592 Tm
+(Important:) Tj
+1 0 0 1 40 578 Tm
+() Tj
+1 0 0 1 40 564 Tm
+(1. Never commit `.env`.) Tj
+1 0 0 1 40 550 Tm
+(2. Rotate secrets if they were exposed in logs/chat.) Tj
+1 0 0 1 40 536 Tm
+() Tj
+1 0 0 1 40 522 Tm
+(## 6.3 Build project) Tj
+1 0 0 1 40 508 Tm
+() Tj
+1 0 0 1 40 494 Tm
+(```powershell) Tj
+1 0 0 1 40 480 Tm
+(npm run build) Tj
+1 0 0 1 40 466 Tm
+(```) Tj
+1 0 0 1 40 452 Tm
+() Tj
+1 0 0 1 40 438 Tm
+(## 7. Running and Testing Paths) Tj
+1 0 0 1 40 424 Tm
+() Tj
+1 0 0 1 40 410 Tm
+(## 7.1 Preferred end-user path \(prompt only\)) Tj
+1 0 0 1 40 396 Tm
+() Tj
+1 0 0 1 40 382 Tm
+(Use this for production-like UX testing:) Tj
+1 0 0 1 40 368 Tm
+() Tj
+1 0 0 1 40 354 Tm
+(```powershell) Tj
+1 0 0 1 40 340 Tm
+(npm run prompt -- "show latest 5 incidents") Tj
+1 0 0 1 40 326 Tm
+(npm run prompt -- "please summarize INC1639945") Tj
+1 0 0 1 40 312 Tm
+(npm run prompt -- "show latest 5 incidents assigned to A Alexson Hentry") Tj
+1 0 0 1 40 298 Tm
+(```) Tj
+1 0 0 1 40 284 Tm
+() Tj
+1 0 0 1 40 270 Tm
+(Expected behavior:) Tj
+1 0 0 1 40 256 Tm
+() Tj
+1 0 0 1 40 242 Tm
+(1. Formatted output only.) Tj
+1 0 0 1 40 228 Tm
+(2. No raw envelope unless verbose mode is enabled.) Tj
+1 0 0 1 40 214 Tm
+() Tj
+1 0 0 1 40 200 Tm
+(## 7.2 Bridge runtime path) Tj
+1 0 0 1 40 186 Tm
+() Tj
+1 0 0 1 40 172 Tm
+(```powershell) Tj
+1 0 0 1 40 158 Tm
+(npm run dev) Tj
+1 0 0 1 40 144 Tm
+(```) Tj
+1 0 0 1 40 130 Tm
+() Tj
+1 0 0 1 40 116 Tm
+(or) Tj
+1 0 0 1 40 102 Tm
+() Tj
+1 0 0 1 40 88 Tm
+(```powershell) Tj
+1 0 0 1 40 74 Tm
+(npm run build) Tj
+1 0 0 1 40 60 Tm
+(npm run start) Tj
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 19 0 R >> >> /Contents 10 0 R >>
+endobj
+10 0 obj
+<< /Length 2572 >>
+stream
+BT
+/F1 10 Tf
+1 0 0 1 40 802 Tm
+(```) Tj
+1 0 0 1 40 788 Tm
+() Tj
+1 0 0 1 40 774 Tm
+(## 7.3 Smoke test path) Tj
+1 0 0 1 40 760 Tm
+() Tj
+1 0 0 1 40 746 Tm
+(```powershell) Tj
+1 0 0 1 40 732 Tm
+(npm run test:smoke) Tj
+1 0 0 1 40 718 Tm
+(```) Tj
+1 0 0 1 40 704 Tm
+() Tj
+1 0 0 1 40 690 Tm
+(Validates:) Tj
+1 0 0 1 40 676 Tm
+() Tj
+1 0 0 1 40 662 Tm
+(1. OAuth token retrieval.) Tj
+1 0 0 1 40 648 Tm
+(2. `initialize`.) Tj
+1 0 0 1 40 634 Tm
+(3. `tools/list`.) Tj
+1 0 0 1 40 620 Tm
+() Tj
+1 0 0 1 40 606 Tm
+(## 7.4 MCPorter direct path \(diagnostics only\)) Tj
+1 0 0 1 40 592 Tm
+() Tj
+1 0 0 1 40 578 Tm
+(Use this when debugging protocol/tool issues, not for standard user flow.) Tj
+1 0 0 1 40 564 Tm
+() Tj
+1 0 0 1 40 550 Tm
+(List tools:) Tj
+1 0 0 1 40 536 Tm
+() Tj
+1 0 0 1 40 522 Tm
+(```powershell) Tj
+1 0 0 1 40 508 Tm
+(npx --yes mcporter --config ".\\.mcp.json" list servicenow-local-bridge --schema --timeout 120000) Tj
+1 0 0 1 40 494 Tm
+(```) Tj
+1 0 0 1 40 480 Tm
+() Tj
+1 0 0 1 40 466 Tm
+(Call lookup:) Tj
+1 0 0 1 40 452 Tm
+() Tj
+1 0 0 1 40 438 Tm
+(```powershell) Tj
+1 0 0 1 40 424 Tm
+(npx --yes mcporter --config ".\\.mcp.json" call servicenow-local-bridge.look_up_incident_records limit=1 --timeout 180000) Tj
+1 0 0 1 40 410 Tm
+(```) Tj
+1 0 0 1 40 396 Tm
+() Tj
+1 0 0 1 40 382 Tm
+(Call summarize:) Tj
+1 0 0 1 40 368 Tm
+() Tj
+1 0 0 1 40 354 Tm
+(```powershell) Tj
+1 0 0 1 40 340 Tm
+(npx --yes mcporter --config ".\\.mcp.json" call servicenow-local-bridge.incident_summarization incidentNumber=INC1639945 --timeout 180000) Tj
+1 0 0 1 40 326 Tm
+(```) Tj
+1 0 0 1 40 312 Tm
+() Tj
+1 0 0 1 40 298 Tm
+(## 8. Why Long Env Prefix Commands Appeared Earlier) Tj
+1 0 0 1 40 284 Tm
+() Tj
+1 0 0 1 40 270 Tm
+(During troubleshooting, commands were run with inline `$env:` assignments for reliability across fresh shells.) Tj
+1 0 0 1 40 256 Tm
+() Tj
+1 0 0 1 40 242 Tm
+(Current best practice:) Tj
+1 0 0 1 40 228 Tm
+() Tj
+1 0 0 1 40 214 Tm
+(1. Put all values in `.env`.) Tj
+1 0 0 1 40 200 Tm
+(2. Prompt command auto-loads `.env`.) Tj
+1 0 0 1 40 186 Tm
+(3. Run only short prompt commands.) Tj
+1 0 0 1 40 172 Tm
+() Tj
+1 0 0 1 40 158 Tm
+(## 9. Prompt Behavior and Dynamic Logic) Tj
+1 0 0 1 40 144 Tm
+() Tj
+1 0 0 1 40 130 Tm
+(Supported intent behaviors:) Tj
+1 0 0 1 40 116 Tm
+() Tj
+1 0 0 1 40 102 Tm
+(1. Incident number detected \(`INC...`\) -> summarize tool.) Tj
+1 0 0 1 40 88 Tm
+(2. Non-incident prompt -> lookup tool.) Tj
+1 0 0 1 40 74 Tm
+(3. Dynamic extraction of limit and common filters \(status/priority\).) Tj
+1 0 0 1 40 60 Tm
+(4. Dynamic extraction of `assigned_to` names from prompt text.) Tj
+ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 19 0 R >> >> /Contents 12 0 R >>
+endobj
+12 0 obj
+<< /Length 2592 >>
+stream
+BT
+/F1 10 Tf
+1 0 0 1 40 802 Tm
+() Tj
+1 0 0 1 40 788 Tm
+(Note on boundaries:) Tj
+1 0 0 1 40 774 Tm
+() Tj
+1 0 0 1 40 760 Tm
+(1. Filtering by assignment group requires backend tool support for `assignment_group`.) Tj
+1 0 0 1 40 746 Tm
+(2. Current tool schema reliably supports `assigned_to` user matching.) Tj
+1 0 0 1 40 732 Tm
+() Tj
+1 0 0 1 40 718 Tm
+(## 10. Output Modes) Tj
+1 0 0 1 40 704 Tm
+() Tj
+1 0 0 1 40 690 Tm
+(Default mode:) Tj
+1 0 0 1 40 676 Tm
+() Tj
+1 0 0 1 40 662 Tm
+(1. Results only \(formatted table or summary text\).) Tj
+1 0 0 1 40 648 Tm
+(2. No internal metrics envelope printed.) Tj
+1 0 0 1 40 634 Tm
+() Tj
+1 0 0 1 40 620 Tm
+(Verbose mode:) Tj
+1 0 0 1 40 606 Tm
+() Tj
+1 0 0 1 40 592 Tm
+(```powershell) Tj
+1 0 0 1 40 578 Tm
+($env:PROMPT_VERBOSE="1") Tj
+1 0 0 1 40 564 Tm
+(npm run prompt -- "show latest 5 incidents") Tj
+1 0 0 1 40 550 Tm
+(```) Tj
+1 0 0 1 40 536 Tm
+() Tj
+1 0 0 1 40 522 Tm
+(Verbose includes internal envelope and metrics.) Tj
+1 0 0 1 40 508 Tm
+() Tj
+1 0 0 1 40 494 Tm
+(## 11. Performance and Reliability Features) Tj
+1 0 0 1 40 480 Tm
+() Tj
+1 0 0 1 40 466 Tm
+(1. OAuth token caching and refresh buffer.) Tj
+1 0 0 1 40 452 Tm
+(2. Retry once on HTTP 401.) Tj
+1 0 0 1 40 438 Tm
+(3. MCP response parsing for JSON/SSE/wrapped variants.) Tj
+1 0 0 1 40 424 Tm
+(4. Prompt response cache with disk persistence:) Tj
+1 0 0 1 40 410 Tm
+(   1. file: `.cache/prompt-cache.json`) Tj
+1 0 0 1 40 396 Tm
+(   2. lookup TTL default: 60s) Tj
+1 0 0 1 40 382 Tm
+(   3. summary TTL default: 10m) Tj
+1 0 0 1 40 368 Tm
+(5. Slow summary warning threshold.) Tj
+1 0 0 1 40 354 Tm
+(6. Summarization fallback to lookup when possible.) Tj
+1 0 0 1 40 340 Tm
+() Tj
+1 0 0 1 40 326 Tm
+(## 12. Proxy Guidance) Tj
+1 0 0 1 40 312 Tm
+() Tj
+1 0 0 1 40 298 Tm
+(If your network needs a proxy:) Tj
+1 0 0 1 40 284 Tm
+() Tj
+1 0 0 1 40 270 Tm
+(1. Set `HTTPS_PROXY`, optionally `HTTP_PROXY`.) Tj
+1 0 0 1 40 256 Tm
+(2. Keep `NO_PROXY=localhost,127.0.0.1`.) Tj
+1 0 0 1 40 242 Tm
+(3. Verify proxy listener:) Tj
+1 0 0 1 40 228 Tm
+() Tj
+1 0 0 1 40 214 Tm
+(```powershell) Tj
+1 0 0 1 40 200 Tm
+(Test-NetConnection localhost -Port 9000) Tj
+1 0 0 1 40 186 Tm
+(```) Tj
+1 0 0 1 40 172 Tm
+() Tj
+1 0 0 1 40 158 Tm
+(## 13. Troubleshooting Guide) Tj
+1 0 0 1 40 144 Tm
+() Tj
+1 0 0 1 40 130 Tm
+(## 13.1 No results returned) Tj
+1 0 0 1 40 116 Tm
+() Tj
+1 0 0 1 40 102 Tm
+(1. Validate user/group value exists in ServiceNow.) Tj
+1 0 0 1 40 88 Tm
+(2. Check whether prompt asked for unsupported field \(for example `assignment_group`\).) Tj
+1 0 0 1 40 74 Tm
+(3. Run direct lookup with a known assignee.) Tj
+1 0 0 1 40 60 Tm
+() Tj
+ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 19 0 R >> >> /Contents 14 0 R >>
+endobj
+14 0 obj
+<< /Length 2700 >>
+stream
+BT
+/F1 10 Tf
+1 0 0 1 40 802 Tm
+(## 13.2 Prompt too slow) Tj
+1 0 0 1 40 788 Tm
+() Tj
+1 0 0 1 40 774 Tm
+(1. Summarization can be naturally slow upstream.) Tj
+1 0 0 1 40 760 Tm
+(2. Increase `MCPORTER_CALL_TIMEOUT`.) Tj
+1 0 0 1 40 746 Tm
+(3. Re-run same prompt to use cache.) Tj
+1 0 0 1 40 732 Tm
+(4. Keep summary timeout high for production realism.) Tj
+1 0 0 1 40 718 Tm
+() Tj
+1 0 0 1 40 704 Tm
+(## 13.3 Unexpected raw JSON) Tj
+1 0 0 1 40 690 Tm
+() Tj
+1 0 0 1 40 676 Tm
+(1. Ensure default prompt mode is used.) Tj
+1 0 0 1 40 662 Tm
+(2. Ensure `PROMPT_VERBOSE` is not `1`.) Tj
+1 0 0 1 40 648 Tm
+(3. Pull latest code where table formatter is included.) Tj
+1 0 0 1 40 634 Tm
+() Tj
+1 0 0 1 40 620 Tm
+(## 13.4 Auth failures) Tj
+1 0 0 1 40 606 Tm
+() Tj
+1 0 0 1 40 592 Tm
+(1. Verify client ID/secret/token URL.) Tj
+1 0 0 1 40 578 Tm
+(2. Confirm OAuth client grants are enabled.) Tj
+1 0 0 1 40 564 Tm
+(3. Rotate secret if exposure occurred.) Tj
+1 0 0 1 40 550 Tm
+() Tj
+1 0 0 1 40 536 Tm
+(## 13.5 VS Code asks for Allow during agent-executed commands) Tj
+1 0 0 1 40 522 Tm
+() Tj
+1 0 0 1 40 508 Tm
+(1. This is VS Code agent security gating.) Tj
+1 0 0 1 40 494 Tm
+(2. It is not application behavior.) Tj
+1 0 0 1 40 480 Tm
+(3. End users in production should interact with prompt interface, not run agent-executed terminal commands.) Tj
+1 0 0 1 40 466 Tm
+() Tj
+1 0 0 1 40 452 Tm
+(## 14. Security Checklist) Tj
+1 0 0 1 40 438 Tm
+() Tj
+1 0 0 1 40 424 Tm
+(1. `.env` remains git-ignored.) Tj
+1 0 0 1 40 410 Tm
+(2. No secrets in code or docs.) Tj
+1 0 0 1 40 396 Tm
+(3. Secret rotation policy defined.) Tj
+1 0 0 1 40 382 Tm
+(4. Redacted logs enabled.) Tj
+1 0 0 1 40 368 Tm
+(5. Least-privilege ServiceNow integration user.) Tj
+1 0 0 1 40 354 Tm
+() Tj
+1 0 0 1 40 340 Tm
+(## 15. Operational SOP for New Team Members) Tj
+1 0 0 1 40 326 Tm
+() Tj
+1 0 0 1 40 312 Tm
+(Day-1 onboarding:) Tj
+1 0 0 1 40 298 Tm
+() Tj
+1 0 0 1 40 284 Tm
+(1. Clone repo.) Tj
+1 0 0 1 40 270 Tm
+(2. `npm install`.) Tj
+1 0 0 1 40 256 Tm
+(3. Copy `.env.example` to `.env` and populate real values.) Tj
+1 0 0 1 40 242 Tm
+(4. `npm run build`.) Tj
+1 0 0 1 40 228 Tm
+(5. `npm run test:smoke`.) Tj
+1 0 0 1 40 214 Tm
+(6. `npm run prompt -- "show latest 5 incidents"`.) Tj
+1 0 0 1 40 200 Tm
+(7. `npm run prompt -- "please summarize INC1639945"`.) Tj
+1 0 0 1 40 186 Tm
+() Tj
+1 0 0 1 40 172 Tm
+(Daily usage:) Tj
+1 0 0 1 40 158 Tm
+() Tj
+1 0 0 1 40 144 Tm
+(1. Use prompt commands only.) Tj
+1 0 0 1 40 130 Tm
+(2. Avoid direct MCPorter commands unless debugging.) Tj
+1 0 0 1 40 116 Tm
+(3. Keep outputs in results-only mode.) Tj
+1 0 0 1 40 102 Tm
+() Tj
+1 0 0 1 40 88 Tm
+(## 16. Commands Reference \(Quick Copy\)) Tj
+1 0 0 1 40 74 Tm
+() Tj
+1 0 0 1 40 60 Tm
+(Build:) Tj
+ET
+endstream
+endobj
+15 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 19 0 R >> >> /Contents 16 0 R >>
+endobj
+16 0 obj
+<< /Length 2394 >>
+stream
+BT
+/F1 10 Tf
+1 0 0 1 40 802 Tm
+() Tj
+1 0 0 1 40 788 Tm
+(```powershell) Tj
+1 0 0 1 40 774 Tm
+(npm run build) Tj
+1 0 0 1 40 760 Tm
+(```) Tj
+1 0 0 1 40 746 Tm
+() Tj
+1 0 0 1 40 732 Tm
+(Smoke test:) Tj
+1 0 0 1 40 718 Tm
+() Tj
+1 0 0 1 40 704 Tm
+(```powershell) Tj
+1 0 0 1 40 690 Tm
+(npm run test:smoke) Tj
+1 0 0 1 40 676 Tm
+(```) Tj
+1 0 0 1 40 662 Tm
+() Tj
+1 0 0 1 40 648 Tm
+(Latest incidents:) Tj
+1 0 0 1 40 634 Tm
+() Tj
+1 0 0 1 40 620 Tm
+(```powershell) Tj
+1 0 0 1 40 606 Tm
+(npm run prompt -- "show latest 10 incidents") Tj
+1 0 0 1 40 592 Tm
+(```) Tj
+1 0 0 1 40 578 Tm
+() Tj
+1 0 0 1 40 564 Tm
+(Assignee filter:) Tj
+1 0 0 1 40 550 Tm
+() Tj
+1 0 0 1 40 536 Tm
+(```powershell) Tj
+1 0 0 1 40 522 Tm
+(npm run prompt -- "show latest 5 incidents assigned to A Alexson Hentry") Tj
+1 0 0 1 40 508 Tm
+(```) Tj
+1 0 0 1 40 494 Tm
+() Tj
+1 0 0 1 40 480 Tm
+(Summary:) Tj
+1 0 0 1 40 466 Tm
+() Tj
+1 0 0 1 40 452 Tm
+(```powershell) Tj
+1 0 0 1 40 438 Tm
+(npm run prompt -- "please summarize INC1639945") Tj
+1 0 0 1 40 424 Tm
+(```) Tj
+1 0 0 1 40 410 Tm
+() Tj
+1 0 0 1 40 396 Tm
+(Verbose mode:) Tj
+1 0 0 1 40 382 Tm
+() Tj
+1 0 0 1 40 368 Tm
+(```powershell) Tj
+1 0 0 1 40 354 Tm
+($env:PROMPT_VERBOSE="1") Tj
+1 0 0 1 40 340 Tm
+(npm run prompt -- "show latest 5 incidents") Tj
+1 0 0 1 40 326 Tm
+(```) Tj
+1 0 0 1 40 312 Tm
+() Tj
+1 0 0 1 40 298 Tm
+(## 17. Change History Highlights) Tj
+1 0 0 1 40 284 Tm
+() Tj
+1 0 0 1 40 270 Tm
+(1. Bridge and proxy/auth stack implemented.) Tj
+1 0 0 1 40 256 Tm
+(2. MCP response compatibility hardening added.) Tj
+1 0 0 1 40 242 Tm
+(3. Prompt router/orchestrator introduced.) Tj
+1 0 0 1 40 228 Tm
+(4. Results-only output mode enabled.) Tj
+1 0 0 1 40 214 Tm
+(5. Table formatting for lookup results enabled.) Tj
+1 0 0 1 40 200 Tm
+(6. `.env` auto-load for prompt mode enabled.) Tj
+1 0 0 1 40 186 Tm
+(7. In-process runtime execution path added for production-like prompt testing.) Tj
+1 0 0 1 40 172 Tm
+() Tj
+1 0 0 1 40 158 Tm
+(## 18. Handover Notes) Tj
+1 0 0 1 40 144 Tm
+() Tj
+1 0 0 1 40 130 Tm
+(For production rollout alignment:) Tj
+1 0 0 1 40 116 Tm
+() Tj
+1 0 0 1 40 102 Tm
+(1. Prefer always-on service deployment for bridge.) Tj
+1 0 0 1 40 88 Tm
+(2. Integrate secrets from secure secret store.) Tj
+1 0 0 1 40 74 Tm
+(3. Keep prompt UX stable and command-free for end users.) Tj
+1 0 0 1 40 60 Tm
+(4. Extend tool schema in ServiceNow for richer fields like `assignment_group` when required.) Tj
+ET
+endstream
+endobj
+17 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 19 0 R >> >> /Contents 18 0 R >>
+endobj
+18 0 obj
+<< /Length 39 >>
+stream
+BT
+/F1 10 Tf
+1 0 0 1 40 802 Tm
+() Tj
+ET
+endstream
+endobj
+19 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+xref
+0 20
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000163 00000 n 
+0000000290 00000 n 
+0000003361 00000 n 
+0000003488 00000 n 
+0000006462 00000 n 
+0000006589 00000 n 
+0000008836 00000 n 
+0000008964 00000 n 
+0000011589 00000 n 
+0000011718 00000 n 
+0000014363 00000 n 
+0000014492 00000 n 
+0000017245 00000 n 
+0000017374 00000 n 
+0000019821 00000 n 
+0000019950 00000 n 
+0000020040 00000 n 
+trailer
+<< /Size 20 /Root 1 0 R >>
+startxref
+20109
+%%EOF

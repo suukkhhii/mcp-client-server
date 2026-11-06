@@ -1,6 +1,6 @@
 import { routePrompt, extractIncidentNumber } from "../router/intentRouter.js";
 import type { PromptResponseEnvelope, ToolInvocation } from "../types/index.js";
-import { runMcporterCall } from "./mcporterClient.js";
+import { runMcpTool } from "./mcpRuntimeClient.js";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 
@@ -42,7 +42,7 @@ export async function runPrompt(prompt: string): Promise<PromptResponseEnvelope>
   try {
     const { stdout, durationMs } = cached
       ? { stdout: cached, durationMs: 0 }
-      : await runMcporterCall(selector, decision.args);
+      : await runMcpTool(decision.tool, decision.args);
 
     invocation.success = true;
     invocation.durationMs = durationMs;
@@ -96,7 +96,7 @@ export async function runPrompt(prompt: string): Promise<PromptResponseEnvelope>
           const fallbackCached = getCache(fallbackCacheKey);
           const fallbackResult = fallbackCached
             ? { stdout: fallbackCached, durationMs: 0 }
-            : await runMcporterCall(fallbackSelector, fallbackArgs);
+            : await runMcpTool("look_up_incident_records", fallbackArgs);
 
           if (!fallbackCached) {
             await setCache(fallbackCacheKey, fallbackResult.stdout, CACHE_TTL_LOOKUP_MS);
