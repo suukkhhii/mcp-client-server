@@ -65,19 +65,49 @@ function estimateTextWidth(text, font, size) {
 }
 
 function splitWrapped(text, font, size, maxWidth) {
-  const words = text.split(/\s+/).filter(Boolean);
-  if (words.length === 0) {
+  const normalized = text.trim();
+  if (!normalized) {
     return [""];
   }
+
+  const words = normalized.split(/\s+/).filter(Boolean);
+
+  function breakLongToken(token) {
+    if (estimateTextWidth(token, font, size) <= maxWidth) {
+      return [token];
+    }
+
+    const parts = [];
+    let current = "";
+    for (const ch of token) {
+      const candidate = current + ch;
+      if (current && estimateTextWidth(candidate, font, size) > maxWidth) {
+        parts.push(current);
+        current = ch;
+      } else {
+        current = candidate;
+      }
+    }
+    if (current) {
+      parts.push(current);
+    }
+    return parts;
+  }
+
+  const expanded = words.flatMap((w) => breakLongToken(w));
+  if (expanded.length === 0) {
+    return [""];
+  }
+
   const lines = [];
-  let current = words[0];
-  for (let i = 1; i < words.length; i += 1) {
-    const candidate = `${current} ${words[i]}`;
+  let current = expanded[0];
+  for (let i = 1; i < expanded.length; i += 1) {
+    const candidate = `${current} ${expanded[i]}`;
     if (estimateTextWidth(candidate, font, size) <= maxWidth) {
       current = candidate;
     } else {
       lines.push(current);
-      current = words[i];
+      current = expanded[i];
     }
   }
   lines.push(current);
