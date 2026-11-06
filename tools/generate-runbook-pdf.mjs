@@ -154,6 +154,101 @@ function drawRect(x, y, w, h, rgb) {
   page.stream.push(`${x.toFixed(2)} ${y.toFixed(2)} ${w.toFixed(2)} ${h.toFixed(2)} re f`);
 }
 
+function drawRectStroke(x, y, w, h, rgb, lineWidth = 0.8) {
+  setStrokeRGB(rgb[0], rgb[1], rgb[2]);
+  page.stream.push(`${lineWidth.toFixed(2)} w`);
+  page.stream.push(`${x.toFixed(2)} ${y.toFixed(2)} ${w.toFixed(2)} ${h.toFixed(2)} re S`);
+}
+
+function isTableSeparatorLine(line) {
+  const t = line.trim();
+  if (!t.startsWith("|")) {
+    return false;
+  }
+  return /^\|(?:\s*:?-{3,}:?\s*\|)+\s*$/.test(t);
+}
+
+function splitTableRow(line) {
+  const trimmed = line.trim();
+  const noEdges = trimmed.replace(/^\|/, "").replace(/\|$/, "");
+  return noEdges.split("|").map((c) => c.trim().replace(/`([^`]+)`/g, "$1"));
+}
+
+function computeColumnWidths(headers, rows) {
+  const colCount = headers.length;
+  const base = new Array(colCount).fill(0);
+  const allRows = [headers, ...rows];
+  for (const row of allRows) {
+    for (let i = 0; i < colCount; i += 1) {
+      const len = (row[i] ?? "").length;
+      base[i] = Math.max(base[i], Math.min(len, 60));
+    }
+  }
+
+  const minWeight = 8;
+  const weights = base.map((v) => Math.max(minWeight, v));
+  const sum = weights.reduce((a, b) => a + b, 0);
+  return weights.map((w) => (w / sum) * contentW);
+}
+
+function rowHeight(cells, colWidths, font, size, lineGap = 2, padY = 4, padX = 5) {
+  const lineHeight = size + lineGap;
+  let maxLines = 1;
+  for (let i = 0; i < colWidths.length; i += 1) {
+    const text = cells[i] ?? "";
+    const wrapped = splitWrapped(text, font, size, Math.max(16, colWidths[i] - padX * 2));
+    maxLines = Math.max(maxLines, wrapped.length);
+  }
+  return maxLines * lineHeight + padY * 2;
+}
+
+function writeTable(headers, rows) {
+  const colWidths = computeColumnWidths(headers, rows);
+  const headerBg = [0.9, 0.94, 1.0];
+  const grid = [0.75, 0.8, 0.88];
+  const bodyBg = [1, 1, 1];
+  const padX = 5;
+  const padY = 4;
+  const lineGap = 2;
+  const headerFont = "Helvetica-Bold";
+  const bodyFont = "Helvetica";
+  const fontSize = 9.7;
+  const lineHeight = fontSize + lineGap;
+
+  const drawRow = (cells, isHeader = false) => {
+    const h = rowHeight(cells, colWidths, isHeader ? headerFont : bodyFont, fontSize, lineGap, padY, padX);
+    ensureSpace(h + 2);
+
+    const top = page.y;
+    const bottom = top - h;
+
+    let x = margin;
+    for (let i = 0; i < colWidths.length; i += 1) {
+      const w = colWidths[i];
+      drawRect(x, bottom, w, h, isHeader ? headerBg : bodyBg);
+      drawRectStroke(x, bottom, w, h, grid, 0.8);
+
+      const text = cells[i] ?? "";
+      const wrapped = splitWrapped(text, isHeader ? headerFont : bodyFont, fontSize, Math.max(16, w - padX * 2));
+      let ty = top - padY - fontSize;
+      for (const line of wrapped) {
+        drawTextLine(line, x + padX, ty, isHeader ? headerFont : bodyFont, fontSize, palette.body);
+        ty -= lineHeight;
+      }
+
+      x += w;
+    }
+
+    page.y -= h;
+  };
+
+  drawRow(headers, true);
+  for (const row of rows) {
+    drawRow(row, false);
+  }
+  page.y -= 6;
+}
+
 function writeCodeBlock(lines) {
   const font = "Courier";
   const size = 9;
@@ -213,6 +308,18 @@ function render(md) {
     if (line.startsWith("### ")) {
       writeHeading(line.slice(4).trim(), 2);
       i += 1;
+      continue;
+    }
+
+    if (line.trim().startsWith("|") && i + 1 < lines.length && isTableSeparatorLine(lines[i + 1])) {
+      const headers = splitTableRow(line);
+      const rows = [];
+      i += 2;
+      while (i < lines.length && lines[i].trim().startsWith("|")) {
+        rows.push(splitTableRow(lines[i]));
+        i += 1;
+      }
+      writeTable(headers, rows);
       continue;
     }
 

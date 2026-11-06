@@ -3,10 +3,10 @@
 << /Type /Catalog /Pages 2 0 R >>
 endobj
 2 0 obj
-<< /Type /Pages /Count 8 /Kids [ 3 0 R 5 0 R 7 0 R 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R ] >>
+<< /Type /Pages /Count 9 /Kids [ 3 0 R 5 0 R 7 0 R 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R 19 0 R ] >>
 endobj
 3 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /Helvetica 19 0 R /Helvetica-Bold 20 0 R /Courier 21 0 R >> >> /Contents 4 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /Helvetica 21 0 R /Helvetica-Bold 22 0 R /Courier 23 0 R >> >> /Contents 4 0 R >>
 endobj
 4 0 obj
 << /Length 4762 >>
@@ -275,7 +275,7 @@ ET
 endstream
 endobj
 5 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /Helvetica 19 0 R /Helvetica-Bold 20 0 R /Courier 21 0 R >> >> /Contents 6 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /Helvetica 21 0 R /Helvetica-Bold 22 0 R /Courier 23 0 R >> >> /Contents 6 0 R >>
 endobj
 6 0 obj
 << /Length 6370 >>
@@ -661,7 +661,7 @@ ET
 endstream
 endobj
 7 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /Helvetica 19 0 R /Helvetica-Bold 20 0 R /Courier 21 0 R >> >> /Contents 8 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /Helvetica 21 0 R /Helvetica-Bold 22 0 R /Courier 23 0 R >> >> /Contents 8 0 R >>
 endobj
 8 0 obj
 << /Length 4454 >>
@@ -929,7 +929,7 @@ ET
 endstream
 endobj
 9 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /Helvetica 19 0 R /Helvetica-Bold 20 0 R /Courier 21 0 R >> >> /Contents 10 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /Helvetica 21 0 R /Helvetica-Bold 22 0 R /Courier 23 0 R >> >> /Contents 10 0 R >>
 endobj
 10 0 obj
 << /Length 4535 >>
@@ -1189,7 +1189,7 @@ ET
 endstream
 endobj
 11 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /Helvetica 19 0 R /Helvetica-Bold 20 0 R /Courier 21 0 R >> >> /Contents 12 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /Helvetica 21 0 R /Helvetica-Bold 22 0 R /Courier 23 0 R >> >> /Contents 12 0 R >>
 endobj
 12 0 obj
 << /Length 5042 >>
@@ -1489,7 +1489,7 @@ ET
 endstream
 endobj
 13 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /Helvetica 19 0 R /Helvetica-Bold 20 0 R /Courier 21 0 R >> >> /Contents 14 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /Helvetica 21 0 R /Helvetica-Bold 22 0 R /Courier 23 0 R >> >> /Contents 14 0 R >>
 endobj
 14 0 obj
 << /Length 5387 >>
@@ -1827,7 +1827,7 @@ ET
 endstream
 endobj
 15 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /Helvetica 19 0 R /Helvetica-Bold 20 0 R /Courier 21 0 R >> >> /Contents 16 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /Helvetica 21 0 R /Helvetica-Bold 22 0 R /Courier 23 0 R >> >> /Contents 16 0 R >>
 endobj
 16 0 obj
 << /Length 5326 >>
@@ -2147,10 +2147,10 @@ ET
 endstream
 endobj
 17 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /Helvetica 19 0 R /Helvetica-Bold 20 0 R /Courier 21 0 R >> >> /Contents 18 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /Helvetica 21 0 R /Helvetica-Bold 22 0 R /Courier 23 0 R >> >> /Contents 18 0 R >>
 endobj
 18 0 obj
-<< /Length 6147 >>
+<< /Length 15018 >>
 stream
 0.120 0.160 0.220 rg
 BT
@@ -2176,301 +2176,959 @@ BT
 1 0 0 1 54.00 739.89 Tm
 (19. Technical Component Map \(With Examples\)) Tj
 ET
+0.900 0.940 1.000 rg
+54.00 685.19 119.11 19.70 re f
+0.750 0.800 0.880 RG
+0.80 w
+54.00 685.19 119.11 19.70 re S
 0.120 0.160 0.220 rg
 BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 704.89 Tm
-(| Technical Component | Exact File Path | Small Example |) Tj
+/Helvetica-Bold 9.7 Tf
+1 0 0 1 59.00 691.19 Tm
+(Technical Component) Tj
+ET
+0.900 0.940 1.000 rg
+173.11 685.19 151.60 19.70 re f
+0.750 0.800 0.880 RG
+0.80 w
+173.11 685.19 151.60 19.70 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 9.7 Tf
+1 0 0 1 178.11 691.19 Tm
+(Exact File Path) Tj
+ET
+0.900 0.940 1.000 rg
+324.71 685.19 216.57 19.70 re f
+0.750 0.800 0.880 RG
+0.80 w
+324.71 685.19 216.57 19.70 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 9.7 Tf
+1 0 0 1 329.71 691.19 Tm
+(Small Example) Tj
+ET
+1.000 1.000 1.000 rg
+54.00 642.09 119.11 43.10 re f
+0.750 0.800 0.880 RG
+0.80 w
+54.00 642.09 119.11 43.10 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 59.00 671.49 Tm
+(Prompt entrypoint) Tj
+ET
+1.000 1.000 1.000 rg
+173.11 642.09 151.60 43.10 re f
+0.750 0.800 0.880 RG
+0.80 w
+173.11 642.09 151.60 43.10 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 178.11 671.49 Tm
+(src/promptRouter.ts) Tj
+ET
+1.000 1.000 1.000 rg
+324.71 642.09 216.57 43.10 re f
+0.750 0.800 0.880 RG
+0.80 w
+324.71 642.09 216.57 43.10 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 671.49 Tm
+(Input: npm run prompt -- "show top 5) Tj
 ET
 0.120 0.160 0.220 rg
 BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 689.39 Tm
-(| --- | --- | --- |) Tj
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 659.79 Tm
+(incidents" -> Output: formatted table) Tj
 ET
 0.120 0.160 0.220 rg
 BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 673.89 Tm
-(| Prompt entrypoint | src/promptRouter.ts | Input: npm run prompt -- "show top 5) Tj
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 648.09 Tm
+(only) Tj
+ET
+1.000 1.000 1.000 rg
+54.00 587.29 119.11 54.80 re f
+0.750 0.800 0.880 RG
+0.80 w
+54.00 587.29 119.11 54.80 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 59.00 628.39 Tm
+(Prompt intent routing) Tj
+ET
+1.000 1.000 1.000 rg
+173.11 587.29 151.60 54.80 re f
+0.750 0.800 0.880 RG
+0.80 w
+173.11 587.29 151.60 54.80 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 178.11 628.39 Tm
+(src/agent/router/intentRouter.ts) Tj
+ET
+1.000 1.000 1.000 rg
+324.71 587.29 216.57 54.80 re f
+0.750 0.800 0.880 RG
+0.80 w
+324.71 587.29 216.57 54.80 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 628.39 Tm
+(Prompt with INC1639945 -> route to) Tj
 ET
 0.120 0.160 0.220 rg
 BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 660.39 Tm
-(incidents" -> Output: formatted table only |) Tj
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 616.69 Tm
+(incident_summarization; prompt with top) Tj
 ET
 0.120 0.160 0.220 rg
 BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 644.89 Tm
-(| Prompt intent routing | src/agent/router/intentRouter.ts | Prompt with INC1639945 ->) Tj
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 604.99 Tm
+(10 -> route to look_up_incident_records) Tj
 ET
 0.120 0.160 0.220 rg
 BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 631.39 Tm
-(route to incident_summarization; prompt with top 10 -> route to) Tj
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 593.29 Tm
+(limit=10) Tj
+ET
+1.000 1.000 1.000 rg
+54.00 544.19 119.11 43.10 re f
+0.750 0.800 0.880 RG
+0.80 w
+54.00 544.19 119.11 43.10 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 59.00 573.59 Tm
+(Prompt orchestration) Tj
+ET
+1.000 1.000 1.000 rg
+173.11 544.19 151.60 43.10 re f
+0.750 0.800 0.880 RG
+0.80 w
+173.11 544.19 151.60 43.10 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 178.11 573.59 Tm
+(src/agent/orchestrator/promptRunner.ts) Tj
+ET
+1.000 1.000 1.000 rg
+324.71 544.19 216.57 43.10 re f
+0.750 0.800 0.880 RG
+0.80 w
+324.71 544.19 216.57 43.10 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 573.59 Tm
+(If same summary is requested again,) Tj
 ET
 0.120 0.160 0.220 rg
 BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 617.89 Tm
-(look_up_incident_records limit=10 |) Tj
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 561.89 Tm
+(return cached result instead of remote) Tj
 ET
 0.120 0.160 0.220 rg
 BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 602.39 Tm
-(| Prompt orchestration | src/agent/orchestrator/promptRunner.ts | If same summary is) Tj
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 550.19 Tm
+(call) Tj
+ET
+1.000 1.000 1.000 rg
+54.00 512.79 119.11 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+54.00 512.79 119.11 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 59.00 530.49 Tm
+(Runtime MCP tool) Tj
 ET
 0.120 0.160 0.220 rg
 BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 588.89 Tm
-(requested again, return cached result instead of remote call |) Tj
+/Helvetica 9.7 Tf
+1 0 0 1 59.00 518.79 Tm
+(caller) Tj
+ET
+1.000 1.000 1.000 rg
+173.11 512.79 151.60 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+173.11 512.79 151.60 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 178.11 530.49 Tm
+(src/agent/orchestrator/mcpRuntimeClient.ts) Tj
+ET
+1.000 1.000 1.000 rg
+324.71 512.79 216.57 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+324.71 512.79 216.57 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 530.49 Tm
+(Converts args like assigned_to=A Alexson) Tj
 ET
 0.120 0.160 0.220 rg
 BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 573.39 Tm
-(| Runtime MCP tool caller | src/agent/orchestrator/mcpRuntimeClient.ts | Converts args) Tj
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 518.79 Tm
+(Hentry into MCP tools/call payload) Tj
+ET
+1.000 1.000 1.000 rg
+54.00 481.39 119.11 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+54.00 481.39 119.11 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 59.00 499.09 Tm
+(Legacy MCPorter) Tj
 ET
 0.120 0.160 0.220 rg
 BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 559.89 Tm
-(like assigned_to=A Alexson Hentry into MCP tools/call payload |) Tj
+/Helvetica 9.7 Tf
+1 0 0 1 59.00 487.39 Tm
+(subprocess caller) Tj
+ET
+1.000 1.000 1.000 rg
+173.11 481.39 151.60 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+173.11 481.39 151.60 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 178.11 499.09 Tm
+(src/agent/orchestrator/mcporterClient.ts) Tj
+ET
+1.000 1.000 1.000 rg
+324.71 481.39 216.57 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+324.71 481.39 216.57 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 499.09 Tm
+(Old style: spawn npx mcporter call ...) Tj
 ET
 0.120 0.160 0.220 rg
 BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 544.39 Tm
-(| Legacy MCPorter subprocess caller | src/agent/orchestrator/mcporterClient.ts | Old) Tj
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 487.39 Tm
+(from child process) Tj
+ET
+1.000 1.000 1.000 rg
+54.00 438.29 119.11 43.10 re f
+0.750 0.800 0.880 RG
+0.80 w
+54.00 438.29 119.11 43.10 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 59.00 467.69 Tm
+(Bridge server main) Tj
+ET
+1.000 1.000 1.000 rg
+173.11 438.29 151.60 43.10 re f
+0.750 0.800 0.880 RG
+0.80 w
+173.11 438.29 151.60 43.10 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 178.11 467.69 Tm
+(src/index.ts) Tj
+ET
+1.000 1.000 1.000 rg
+324.71 438.29 216.57 43.10 re f
+0.750 0.800 0.880 RG
+0.80 w
+324.71 438.29 216.57 43.10 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 467.69 Tm
+(Handles MCP initialize, tools/list,) Tj
 ET
 0.120 0.160 0.220 rg
 BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 530.89 Tm
-(style: spawn npx mcporter call ... from child process |) Tj
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 455.99 Tm
+(tools/call and proxies them to) Tj
 ET
 0.120 0.160 0.220 rg
 BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 515.39 Tm
-(| Bridge server main | src/index.ts | Handles MCP initialize, tools/list, tools/call) Tj
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 444.29 Tm
+(ServiceNow) Tj
+ET
+1.000 1.000 1.000 rg
+54.00 406.89 119.11 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+54.00 406.89 119.11 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 59.00 424.59 Tm
+(MCP HTTP client) Tj
+ET
+1.000 1.000 1.000 rg
+173.11 406.89 151.60 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+173.11 406.89 151.60 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 178.11 424.59 Tm
+(src/mcpHttpClient.ts) Tj
+ET
+1.000 1.000 1.000 rg
+324.71 406.89 216.57 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+324.71 406.89 216.57 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 424.59 Tm
+(Retries once on 401 after refreshing) Tj
 ET
 0.120 0.160 0.220 rg
 BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 501.89 Tm
-(and proxies them to ServiceNow |) Tj
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 412.89 Tm
+(OAuth token) Tj
+ET
+1.000 1.000 1.000 rg
+54.00 375.49 119.11 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+54.00 375.49 119.11 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 59.00 393.19 Tm
+(OAuth token manager) Tj
+ET
+1.000 1.000 1.000 rg
+173.11 375.49 151.60 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+173.11 375.49 151.60 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 178.11 393.19 Tm
+(src/oauthTokenManager.ts) Tj
+ET
+1.000 1.000 1.000 rg
+324.71 375.49 216.57 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+324.71 375.49 216.57 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 393.19 Tm
+(Fetch token once, cache it, refresh) Tj
 ET
 0.120 0.160 0.220 rg
 BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 486.39 Tm
-(| MCP HTTP client | src/mcpHttpClient.ts | Retries once on 401 after refreshing OAuth) Tj
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 381.49 Tm
+(before expiry) Tj
+ET
+1.000 1.000 1.000 rg
+54.00 344.09 119.11 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+54.00 344.09 119.11 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 59.00 361.79 Tm
+(Config) Tj
 ET
 0.120 0.160 0.220 rg
 BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 472.89 Tm
-(token |) Tj
+/Helvetica 9.7 Tf
+1 0 0 1 59.00 350.09 Tm
+(loader/validator) Tj
+ET
+1.000 1.000 1.000 rg
+173.11 344.09 151.60 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+173.11 344.09 151.60 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 178.11 361.79 Tm
+(src/config.ts) Tj
+ET
+1.000 1.000 1.000 rg
+324.71 344.09 216.57 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+324.71 344.09 216.57 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 361.79 Tm
+(Throws clear error if SN_CLIENT_SECRET) Tj
 ET
 0.120 0.160 0.220 rg
 BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 457.39 Tm
-(| OAuth token manager | src/oauthTokenManager.ts | Fetch token once, cache it, refresh) Tj
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 350.09 Tm
+(is missing) Tj
+ET
+1.000 1.000 1.000 rg
+54.00 312.69 119.11 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+54.00 312.69 119.11 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 59.00 330.39 Tm
+(Proxy configuration) Tj
+ET
+1.000 1.000 1.000 rg
+173.11 312.69 151.60 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+173.11 312.69 151.60 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 178.11 330.39 Tm
+(src/proxy.ts) Tj
+ET
+1.000 1.000 1.000 rg
+324.71 312.69 216.57 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+324.71 312.69 216.57 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 330.39 Tm
+(Reads HTTPS_PROXY=http://localhost:9000) Tj
 ET
 0.120 0.160 0.220 rg
 BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 443.89 Tm
-(before expiry |) Tj
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 318.69 Tm
+(and sets global HTTP dispatcher) Tj
+ET
+1.000 1.000 1.000 rg
+54.00 281.29 119.11 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+54.00 281.29 119.11 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 59.00 298.99 Tm
+(Logger/redaction) Tj
+ET
+1.000 1.000 1.000 rg
+173.11 281.29 151.60 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+173.11 281.29 151.60 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 178.11 298.99 Tm
+(src/logger.ts) Tj
+ET
+1.000 1.000 1.000 rg
+324.71 281.29 216.57 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+324.71 281.29 216.57 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 298.99 Tm
+(Masks sensitive fields like bearer token) Tj
 ET
 0.120 0.160 0.220 rg
 BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 428.39 Tm
-(| Config loader/validator | src/config.ts | Throws clear error if SN_CLIENT_SECRET is) Tj
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 287.29 Tm
+(and client secret in logs) Tj
+ET
+1.000 1.000 1.000 rg
+54.00 249.89 119.11 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+54.00 249.89 119.11 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 59.00 267.59 Tm
+(Smoke test) Tj
+ET
+1.000 1.000 1.000 rg
+173.11 249.89 151.60 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+173.11 249.89 151.60 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 178.11 267.59 Tm
+(src/smoke.ts) Tj
+ET
+1.000 1.000 1.000 rg
+324.71 249.89 216.57 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+324.71 249.89 216.57 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 267.59 Tm
+(Quick check: token + initialize +) Tj
 ET
 0.120 0.160 0.220 rg
 BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 414.89 Tm
-(missing |) Tj
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 255.89 Tm
+(tools/list all pass) Tj
+ET
+1.000 1.000 1.000 rg
+54.00 230.19 119.11 19.70 re f
+0.750 0.800 0.880 RG
+0.80 w
+54.00 230.19 119.11 19.70 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 59.00 236.19 Tm
+(Router config) Tj
+ET
+1.000 1.000 1.000 rg
+173.11 230.19 151.60 19.70 re f
+0.750 0.800 0.880 RG
+0.80 w
+173.11 230.19 151.60 19.70 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 178.11 236.19 Tm
+(src/agent/config/routerConfig.json) Tj
+ET
+1.000 1.000 1.000 rg
+324.71 230.19 216.57 19.70 re f
+0.750 0.800 0.880 RG
+0.80 w
+324.71 230.19 216.57 19.70 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 236.19 Tm
+(Maps keyword high -> priority 2) Tj
+ET
+1.000 1.000 1.000 rg
+54.00 198.79 119.11 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+54.00 198.79 119.11 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 59.00 216.49 Tm
+(Shared agent types) Tj
+ET
+1.000 1.000 1.000 rg
+173.11 198.79 151.60 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+173.11 198.79 151.60 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 178.11 216.49 Tm
+(src/agent/types/index.ts) Tj
+ET
+1.000 1.000 1.000 rg
+324.71 198.79 216.57 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+324.71 198.79 216.57 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 216.49 Tm
+(Standard response shape includes) Tj
 ET
 0.120 0.160 0.220 rg
 BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 399.39 Tm
-(| Proxy configuration | src/proxy.ts | Reads HTTPS_PROXY=http://localhost:9000 and sets) Tj
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 204.79 Tm
+(normalized, warnings, metrics) Tj
+ET
+1.000 1.000 1.000 rg
+54.00 167.39 119.11 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+54.00 167.39 119.11 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 59.00 185.09 Tm
+(MCPorter config) Tj
+ET
+1.000 1.000 1.000 rg
+173.11 167.39 151.60 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+173.11 167.39 151.60 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 178.11 185.09 Tm
+(.mcp.json) Tj
+ET
+1.000 1.000 1.000 rg
+324.71 167.39 216.57 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+324.71 167.39 216.57 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 185.09 Tm
+(Declares server name and command to run) Tj
 ET
 0.120 0.160 0.220 rg
 BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 385.89 Tm
-(global HTTP dispatcher |) Tj
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 173.39 Tm
+(local bridge \(node dist/index.js\)) Tj
+ET
+1.000 1.000 1.000 rg
+54.00 135.99 119.11 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+54.00 135.99 119.11 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 59.00 153.69 Tm
+(Environment template) Tj
+ET
+1.000 1.000 1.000 rg
+173.11 135.99 151.60 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+173.11 135.99 151.60 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 178.11 153.69 Tm
+(.env.example) Tj
+ET
+1.000 1.000 1.000 rg
+324.71 135.99 216.57 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+324.71 135.99 216.57 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 153.69 Tm
+(Shows required keys like SN_MCP_URL,) Tj
 ET
 0.120 0.160 0.220 rg
 BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 370.39 Tm
-(| Logger/redaction | src/logger.ts | Masks sensitive fields like bearer token and) Tj
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 141.99 Tm
+(SN_OAUTH_TOKEN_URL) Tj
+ET
+1.000 1.000 1.000 rg
+54.00 104.59 119.11 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+54.00 104.59 119.11 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 59.00 122.29 Tm
+(Project) Tj
 ET
 0.120 0.160 0.220 rg
 BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 356.89 Tm
-(client secret in logs |) Tj
+/Helvetica 9.7 Tf
+1 0 0 1 59.00 110.59 Tm
+(scripts/dependencies) Tj
+ET
+1.000 1.000 1.000 rg
+173.11 104.59 151.60 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+173.11 104.59 151.60 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 178.11 122.29 Tm
+(package.json) Tj
+ET
+1.000 1.000 1.000 rg
+324.71 104.59 216.57 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+324.71 104.59 216.57 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 122.29 Tm
+(npm run prompt and npm run docs:pdf) Tj
 ET
 0.120 0.160 0.220 rg
 BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 341.39 Tm
-(| Smoke test | src/smoke.ts | Quick check: token + initialize + tools/list all pass |) Tj
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 110.59 Tm
+(scripts) Tj
+ET
+1.000 1.000 1.000 rg
+54.00 73.19 119.11 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+54.00 73.19 119.11 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 59.00 90.89 Tm
+(Main project guide) Tj
+ET
+1.000 1.000 1.000 rg
+173.11 73.19 151.60 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+173.11 73.19 151.60 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 178.11 90.89 Tm
+(README.md) Tj
+ET
+1.000 1.000 1.000 rg
+324.71 73.19 216.57 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+324.71 73.19 216.57 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 90.89 Tm
+(Setup, proxy, MCPorter commands, prompt) Tj
 ET
 0.120 0.160 0.220 rg
 BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 325.89 Tm
-(| Router config | src/agent/config/routerConfig.json | Maps keyword high -> priority 2) Tj
-ET
-0.120 0.160 0.220 rg
-BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 312.39 Tm
-(|) Tj
-ET
-0.120 0.160 0.220 rg
-BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 296.89 Tm
-(| Shared agent types | src/agent/types/index.ts | Standard response shape includes) Tj
-ET
-0.120 0.160 0.220 rg
-BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 283.39 Tm
-(normalized, warnings, metrics |) Tj
-ET
-0.120 0.160 0.220 rg
-BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 267.89 Tm
-(| MCPorter config | .mcp.json | Declares server name and command to run local bridge) Tj
-ET
-0.120 0.160 0.220 rg
-BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 254.39 Tm
-(\(node dist/index.js\) |) Tj
-ET
-0.120 0.160 0.220 rg
-BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 238.89 Tm
-(| Environment template | .env.example | Shows required keys like SN_MCP_URL,) Tj
-ET
-0.120 0.160 0.220 rg
-BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 225.39 Tm
-(SN_OAUTH_TOKEN_URL |) Tj
-ET
-0.120 0.160 0.220 rg
-BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 209.89 Tm
-(| Project scripts/dependencies | package.json | npm run prompt and npm run docs:pdf) Tj
-ET
-0.120 0.160 0.220 rg
-BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 196.39 Tm
-(scripts |) Tj
-ET
-0.120 0.160 0.220 rg
-BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 180.89 Tm
-(| Main project guide | README.md | Setup, proxy, MCPorter commands, prompt usage |) Tj
-ET
-0.120 0.160 0.220 rg
-BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 165.39 Tm
-(| Onboarding runbook \(Markdown\) | docs/MCPorter-Onboarding-Runbook.md | Full handover) Tj
-ET
-0.120 0.160 0.220 rg
-BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 151.89 Tm
-(playbook for new engineers |) Tj
-ET
-0.120 0.160 0.220 rg
-BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 136.39 Tm
-(| Onboarding runbook \(PDF\) | docs/MCPorter-Onboarding-Runbook.pdf | Shareable formatted) Tj
-ET
-0.120 0.160 0.220 rg
-BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 122.89 Tm
-(document for distribution |) Tj
-ET
-0.120 0.160 0.220 rg
-BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 107.39 Tm
-(| PDF generator script | tools/generate-runbook-pdf.mjs | Converts runbook markdown) Tj
-ET
-0.120 0.160 0.220 rg
-BT
-/Helvetica 10.5 Tf
-1 0 0 1 54.00 93.89 Tm
-(into distribution PDF |) Tj
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 79.19 Tm
+(usage) Tj
 ET
 endstream
 endobj
 19 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /Helvetica 21 0 R /Helvetica-Bold 22 0 R /Courier 23 0 R >> >> /Contents 20 0 R >>
 endobj
 20 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+<< /Length 2299 >>
+stream
+1.000 1.000 1.000 rg
+54.00 756.49 119.11 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+54.00 756.49 119.11 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 59.00 774.19 Tm
+(Onboarding runbook) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 59.00 762.49 Tm
+(\(Markdown\)) Tj
+ET
+1.000 1.000 1.000 rg
+173.11 756.49 151.60 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+173.11 756.49 151.60 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 178.11 774.19 Tm
+(docs/MCPorter-Onboarding-Runbook.md) Tj
+ET
+1.000 1.000 1.000 rg
+324.71 756.49 216.57 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+324.71 756.49 216.57 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 774.19 Tm
+(Full handover playbook for new engineers) Tj
+ET
+1.000 1.000 1.000 rg
+54.00 725.09 119.11 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+54.00 725.09 119.11 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 59.00 742.79 Tm
+(Onboarding runbook) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 59.00 731.09 Tm
+(\(PDF\)) Tj
+ET
+1.000 1.000 1.000 rg
+173.11 725.09 151.60 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+173.11 725.09 151.60 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 178.11 742.79 Tm
+(docs/MCPorter-Onboarding-Runbook.pdf) Tj
+ET
+1.000 1.000 1.000 rg
+324.71 725.09 216.57 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+324.71 725.09 216.57 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 742.79 Tm
+(Shareable formatted document for) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 731.09 Tm
+(distribution) Tj
+ET
+1.000 1.000 1.000 rg
+54.00 693.69 119.11 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+54.00 693.69 119.11 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 59.00 711.39 Tm
+(PDF generator script) Tj
+ET
+1.000 1.000 1.000 rg
+173.11 693.69 151.60 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+173.11 693.69 151.60 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 178.11 711.39 Tm
+(tools/generate-runbook-pdf.mjs) Tj
+ET
+1.000 1.000 1.000 rg
+324.71 693.69 216.57 31.40 re f
+0.750 0.800 0.880 RG
+0.80 w
+324.71 693.69 216.57 31.40 re S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 711.39 Tm
+(Converts runbook markdown into) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 9.7 Tf
+1 0 0 1 329.71 699.69 Tm
+(distribution PDF) Tj
+ET
+endstream
 endobj
 21 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+22 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+23 0 obj
 << /Type /Font /Subtype /Type1 /BaseFont /Courier >>
 endobj
 xref
-0 22
+0 24
 0000000000 65535 f 
 0000000009 00000 n 
 0000000058 00000 n 
-0000000163 00000 n 
-0000000342 00000 n 
-0000005156 00000 n 
-0000005335 00000 n 
-0000011757 00000 n 
-0000011936 00000 n 
-0000016442 00000 n 
-0000016622 00000 n 
-0000021210 00000 n 
-0000021391 00000 n 
-0000026486 00000 n 
-0000026667 00000 n 
-0000032107 00000 n 
-0000032288 00000 n 
-0000037667 00000 n 
-0000037848 00000 n 
-0000044048 00000 n 
-0000044119 00000 n 
-0000044195 00000 n 
+0000000170 00000 n 
+0000000349 00000 n 
+0000005163 00000 n 
+0000005342 00000 n 
+0000011764 00000 n 
+0000011943 00000 n 
+0000016449 00000 n 
+0000016629 00000 n 
+0000021217 00000 n 
+0000021398 00000 n 
+0000026493 00000 n 
+0000026674 00000 n 
+0000032114 00000 n 
+0000032295 00000 n 
+0000037674 00000 n 
+0000037855 00000 n 
+0000052927 00000 n 
+0000053108 00000 n 
+0000055460 00000 n 
+0000055531 00000 n 
+0000055607 00000 n 
 trailer
-<< /Size 22 /Root 1 0 R >>
+<< /Size 24 /Root 1 0 R >>
 startxref
-44264
+55676
 %%EOF
