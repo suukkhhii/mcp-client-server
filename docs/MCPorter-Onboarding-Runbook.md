@@ -376,3 +376,29 @@ For production rollout alignment:
 2. Integrate secrets from secure secret store.
 3. Keep prompt UX stable and command-free for end users.
 4. Extend tool schema in ServiceNow for richer fields like `assignment_group` when required.
+
+## 19. Technical Component Map (With Examples)
+
+| Technical Component | Exact File Path | Small Example |
+| --- | --- | --- |
+| Prompt entrypoint | `src/promptRouter.ts` | Input: `npm run prompt -- "show top 5 incidents"` -> Output: formatted table only |
+| Prompt intent routing | `src/agent/router/intentRouter.ts` | Prompt with `INC1639945` -> route to `incident_summarization`; prompt with `top 10` -> route to `look_up_incident_records limit=10` |
+| Prompt orchestration | `src/agent/orchestrator/promptRunner.ts` | If same summary is requested again, return cached result instead of remote call |
+| Runtime MCP tool caller | `src/agent/orchestrator/mcpRuntimeClient.ts` | Converts args like `assigned_to=A Alexson Hentry` into MCP `tools/call` payload |
+| Legacy MCPorter subprocess caller | `src/agent/orchestrator/mcporterClient.ts` | Old style: spawn `npx mcporter call ...` from child process |
+| Bridge server main | `src/index.ts` | Handles MCP `initialize`, `tools/list`, `tools/call` and proxies them to ServiceNow |
+| MCP HTTP client | `src/mcpHttpClient.ts` | Retries once on `401` after refreshing OAuth token |
+| OAuth token manager | `src/oauthTokenManager.ts` | Fetch token once, cache it, refresh before expiry |
+| Config loader/validator | `src/config.ts` | Throws clear error if `SN_CLIENT_SECRET` is missing |
+| Proxy configuration | `src/proxy.ts` | Reads `HTTPS_PROXY=http://localhost:9000` and sets global HTTP dispatcher |
+| Logger/redaction | `src/logger.ts` | Masks sensitive fields like bearer token and client secret in logs |
+| Smoke test | `src/smoke.ts` | Quick check: token + initialize + tools/list all pass |
+| Router config | `src/agent/config/routerConfig.json` | Maps keyword `high` -> priority `2` |
+| Shared agent types | `src/agent/types/index.ts` | Standard response shape includes `normalized`, `warnings`, `metrics` |
+| MCPorter config | `.mcp.json` | Declares server name and command to run local bridge (`node dist/index.js`) |
+| Environment template | `.env.example` | Shows required keys like `SN_MCP_URL`, `SN_OAUTH_TOKEN_URL` |
+| Project scripts/dependencies | `package.json` | `npm run prompt` and `npm run docs:pdf` scripts |
+| Main project guide | `README.md` | Setup, proxy, MCPorter commands, prompt usage |
+| Onboarding runbook (Markdown) | `docs/MCPorter-Onboarding-Runbook.md` | Full handover playbook for new engineers |
+| Onboarding runbook (PDF) | `docs/MCPorter-Onboarding-Runbook.pdf` | Shareable formatted document for distribution |
+| PDF generator script | `tools/generate-runbook-pdf.mjs` | Converts runbook markdown into distribution PDF |
