@@ -6,878 +6,2207 @@ endobj
 << /Type /Pages /Count 8 /Kids [ 3 0 R 5 0 R 7 0 R 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R ] >>
 endobj
 3 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 19 0 R >> >> /Contents 4 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /Helvetica 19 0 R /Helvetica-Bold 20 0 R /Courier 21 0 R >> >> /Contents 4 0 R >>
 endobj
 4 0 obj
-<< /Length 3019 >>
+<< /Length 4762 >>
 stream
+0.040 0.240 0.570 rg
 BT
-/F1 10 Tf
-1 0 0 1 40 802 Tm
-(# ServiceNow MCP Bridge and MCPorter Runbook) Tj
-1 0 0 1 40 788 Tm
-() Tj
-1 0 0 1 40 774 Tm
+/Helvetica-Bold 24 Tf
+1 0 0 1 54.00 787.89 Tm
+(ServiceNow MCP Bridge and MCPorter) Tj
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 24 Tf
+1 0 0 1 54.00 760.89 Tm
+(Runbook) Tj
+ET
+0.780 0.820 0.880 RG
+1 w
+54.00 731.89 m 541.28 731.89 l S
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 717.89 Tm
 (Version: 1.0) Tj
-1 0 0 1 40 760 Tm
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 702.39 Tm
 (Last Updated: 2026-11-06) Tj
-1 0 0 1 40 746 Tm
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 686.89 Tm
 (Audience: Engineers onboarding to the ServiceNow MCP bridge project) Tj
-1 0 0 1 40 732 Tm
-() Tj
-1 0 0 1 40 718 Tm
-(## 1. Executive Summary) Tj
-1 0 0 1 40 704 Tm
-() Tj
-1 0 0 1 40 690 Tm
-(This runbook explains why MCPorter was required in this project, how it was introduced, and how to operate the full solution in a production-like way.) Tj
-1 0 0 1 40 676 Tm
-() Tj
-1 0 0 1 40 662 Tm
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 651.39 Tm
+(1. Executive Summary) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 616.39 Tm
+(This runbook explains why MCPorter was required in this project, how it was introduced,) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 602.89 Tm
+(and how to operate the full solution in a production-like way.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 581.39 Tm
 (The target user experience is:) Tj
-1 0 0 1 40 648 Tm
-() Tj
-1 0 0 1 40 634 Tm
-(1. User writes a natural-language prompt.) Tj
-1 0 0 1 40 620 Tm
-(2. System routes to the correct ServiceNow MCP tool.) Tj
-1 0 0 1 40 606 Tm
-(3. System returns formatted results only.) Tj
-1 0 0 1 40 592 Tm
-(4. User does not run low-level tool commands.) Tj
-1 0 0 1 40 578 Tm
-() Tj
-1 0 0 1 40 564 Tm
-(## 2. Why MCPorter Was Needed) Tj
-1 0 0 1 40 550 Tm
-() Tj
-1 0 0 1 40 536 Tm
-(### 2.1 Original objective) Tj
-1 0 0 1 40 522 Tm
-() Tj
-1 0 0 1 40 508 Tm
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 559.89 Tm
+(1.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 559.89 Tm
+(User writes a natural-language prompt.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 545.39 Tm
+(2.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 545.39 Tm
+(System routes to the correct ServiceNow MCP tool.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 530.89 Tm
+(3.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 530.89 Tm
+(System returns formatted results only.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 516.39 Tm
+(4.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 516.39 Tm
+(User does not run low-level tool commands.) Tj
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 481.89 Tm
+(2. Why MCPorter Was Needed) Tj
+ET
+0.080 0.330 0.180 rg
+BT
+/Helvetica-Bold 13.5 Tf
+1 0 0 1 54.00 436.89 Tm
+(2.1 Original objective) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 407.39 Tm
 (The project needed a local MCP bridge that:) Tj
-1 0 0 1 40 494 Tm
-() Tj
-1 0 0 1 40 480 Tm
-(1. Runs as an MCP server over stdio.) Tj
-1 0 0 1 40 466 Tm
-(2. Connects to ServiceNow MCP over HTTP.) Tj
-1 0 0 1 40 452 Tm
-(3. Authenticates with OAuth client credentials.) Tj
-1 0 0 1 40 438 Tm
-(4. Proxies `initialize`, `tools/list`, and `tools/call`.) Tj
-1 0 0 1 40 424 Tm
-() Tj
-1 0 0 1 40 410 Tm
-(### 2.2 Constraint encountered) Tj
-1 0 0 1 40 396 Tm
-() Tj
-1 0 0 1 40 382 Tm
-(Direct VS Code MCP usage was blocked by enterprise policy in this environment. Even with local config, the editor integration could be unavailable due to org restrictions.) Tj
-1 0 0 1 40 368 Tm
-() Tj
-1 0 0 1 40 354 Tm
-(### 2.3 Why MCPorter solved it) Tj
-1 0 0 1 40 340 Tm
-() Tj
-1 0 0 1 40 326 Tm
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 385.89 Tm
+(1.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 385.89 Tm
+(Runs as an MCP server over stdio.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 371.39 Tm
+(2.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 371.39 Tm
+(Connects to ServiceNow MCP over HTTP.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 356.89 Tm
+(3.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 356.89 Tm
+(Authenticates with OAuth client credentials.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 342.39 Tm
+(4.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 342.39 Tm
+(Proxies initialize, tools/list, and tools/call.) Tj
+ET
+0.080 0.330 0.180 rg
+BT
+/Helvetica-Bold 13.5 Tf
+1 0 0 1 54.00 311.89 Tm
+(2.2 Constraint encountered) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 282.39 Tm
+(Direct VS Code MCP usage was blocked by enterprise policy in this environment. Even) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 268.89 Tm
+(with local config, the editor integration could be unavailable due to org restrictions.) Tj
+ET
+0.080 0.330 0.180 rg
+BT
+/Helvetica-Bold 13.5 Tf
+1 0 0 1 54.00 237.39 Tm
+(2.3 Why MCPorter solved it) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 207.89 Tm
 (MCPorter provided a terminal-accessible MCP client path that allowed:) Tj
-1 0 0 1 40 312 Tm
-() Tj
-1 0 0 1 40 298 Tm
-(1. Listing MCP tools.) Tj
-1 0 0 1 40 284 Tm
-(2. Calling tools deterministically.) Tj
-1 0 0 1 40 270 Tm
-(3. Testing connectivity/auth/proxy independent of editor policy.) Tj
-1 0 0 1 40 256 Tm
-(4. Fast diagnosis of payload/timeout/response-shape issues.) Tj
-1 0 0 1 40 242 Tm
-() Tj
-1 0 0 1 40 228 Tm
-(In short, MCPorter became the practical test and operations harness while preserving the same bridge logic.) Tj
-1 0 0 1 40 214 Tm
-() Tj
-1 0 0 1 40 200 Tm
-(## 3. Solution Architecture) Tj
-1 0 0 1 40 186 Tm
-() Tj
-1 0 0 1 40 172 Tm
-(## 3.1 Components) Tj
-1 0 0 1 40 158 Tm
-() Tj
-1 0 0 1 40 144 Tm
-(1. Local Node.js bridge \(`dist/index.js`\) exposing stdio MCP server.) Tj
-1 0 0 1 40 130 Tm
-(2. ServiceNow MCP HTTP endpoint.) Tj
-1 0 0 1 40 116 Tm
-(3. OAuth token manager with refresh/retry.) Tj
-1 0 0 1 40 102 Tm
-(4. Prompt router and orchestrator for natural-language requests.) Tj
-1 0 0 1 40 88 Tm
-(5. Formatted result rendering for CLI output.) Tj
-1 0 0 1 40 74 Tm
-() Tj
-1 0 0 1 40 60 Tm
-(## 3.2 High-level flow) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 186.39 Tm
+(1.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 186.39 Tm
+(Listing MCP tools.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 171.89 Tm
+(2.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 171.89 Tm
+(Calling tools deterministically.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 157.39 Tm
+(3.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 157.39 Tm
+(Testing connectivity/auth/proxy independent of editor policy.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 142.89 Tm
+(4.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 142.89 Tm
+(Fast diagnosis of payload/timeout/response-shape issues.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 122.39 Tm
+(In short, MCPorter became the practical test and operations harness while preserving) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 108.89 Tm
+(the same bridge logic.) Tj
 ET
 endstream
 endobj
 5 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 19 0 R >> >> /Contents 6 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /Helvetica 19 0 R /Helvetica-Bold 20 0 R /Courier 21 0 R >> >> /Contents 6 0 R >>
 endobj
 6 0 obj
-<< /Length 2922 >>
+<< /Length 6370 >>
 stream
+0.040 0.240 0.570 rg
 BT
-/F1 10 Tf
-1 0 0 1 40 802 Tm
-() Tj
-1 0 0 1 40 788 Tm
-(1. User runs `npm run prompt -- "..."`.) Tj
-1 0 0 1 40 774 Tm
-(2. Prompt router chooses tool and parameters.) Tj
-1 0 0 1 40 760 Tm
-(3. Orchestrator calls ServiceNow MCP through bridge runtime.) Tj
-1 0 0 1 40 746 Tm
-(4. Response is normalized and formatted.) Tj
-1 0 0 1 40 732 Tm
-(5. User sees only final result.) Tj
-1 0 0 1 40 718 Tm
-() Tj
-1 0 0 1 40 704 Tm
-(## 4. Repository Structure) Tj
-1 0 0 1 40 690 Tm
-() Tj
-1 0 0 1 40 676 Tm
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 787.89 Tm
+(3. Solution Architecture) Tj
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 738.89 Tm
+(3.1 Components) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 703.89 Tm
+(1.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 703.89 Tm
+(Local Node.js bridge \(dist/index.js\) exposing stdio MCP server.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 689.39 Tm
+(2.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 689.39 Tm
+(ServiceNow MCP HTTP endpoint.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 674.89 Tm
+(3.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 674.89 Tm
+(OAuth token manager with refresh/retry.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 660.39 Tm
+(4.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 660.39 Tm
+(Prompt router and orchestrator for natural-language requests.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 645.89 Tm
+(5.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 645.89 Tm
+(Formatted result rendering for CLI output.) Tj
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 611.39 Tm
+(3.2 High-level flow) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 576.39 Tm
+(1.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 576.39 Tm
+(User runs npm run prompt -- "...".) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 561.89 Tm
+(2.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 561.89 Tm
+(Prompt router chooses tool and parameters.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 547.39 Tm
+(3.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 547.39 Tm
+(Orchestrator calls ServiceNow MCP through bridge runtime.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 532.89 Tm
+(4.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 532.89 Tm
+(Response is normalized and formatted.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 518.39 Tm
+(5.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 518.39 Tm
+(User sees only final result.) Tj
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 483.89 Tm
+(4. Repository Structure) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 448.89 Tm
 (Key files and folders:) Tj
-1 0 0 1 40 662 Tm
-() Tj
-1 0 0 1 40 648 Tm
-(1. `src/index.ts` - stdio MCP bridge server.) Tj
-1 0 0 1 40 634 Tm
-(2. `src/config.ts` - env parsing and validation.) Tj
-1 0 0 1 40 620 Tm
-(3. `src/oauthTokenManager.ts` - OAuth token lifecycle.) Tj
-1 0 0 1 40 606 Tm
-(4. `src/mcpHttpClient.ts` - remote MCP HTTP client and parsing.) Tj
-1 0 0 1 40 592 Tm
-(5. `src/proxy.ts` - proxy setup from env.) Tj
-1 0 0 1 40 578 Tm
-(6. `src/promptRouter.ts` - prompt entrypoint and output formatting.) Tj
-1 0 0 1 40 564 Tm
-(7. `src/agent/router/intentRouter.ts` - intent-to-tool mapping.) Tj
-1 0 0 1 40 550 Tm
-(8. `src/agent/orchestrator/promptRunner.ts` - execution and normalization.) Tj
-1 0 0 1 40 536 Tm
-(9. `src/agent/orchestrator/mcpRuntimeClient.ts` - in-process tool runtime client.) Tj
-1 0 0 1 40 522 Tm
-(10. `.mcp.json` - MCPorter server configuration.) Tj
-1 0 0 1 40 508 Tm
-(11. `.env.example` - required and optional environment variables.) Tj
-1 0 0 1 40 494 Tm
-(12. `README.md` - project usage reference.) Tj
-1 0 0 1 40 480 Tm
-() Tj
-1 0 0 1 40 466 Tm
-(## 5. Prerequisites) Tj
-1 0 0 1 40 452 Tm
-() Tj
-1 0 0 1 40 438 Tm
-(1. Windows PowerShell \(or compatible shell\).) Tj
-1 0 0 1 40 424 Tm
-(2. Node.js 20+.) Tj
-1 0 0 1 40 410 Tm
-(3. npm 10+.) Tj
-1 0 0 1 40 396 Tm
-(4. ServiceNow OAuth client credentials.) Tj
-1 0 0 1 40 382 Tm
-(5. ServiceNow MCP endpoint URL.) Tj
-1 0 0 1 40 368 Tm
-(6. Corporate proxy details if required.) Tj
-1 0 0 1 40 354 Tm
-() Tj
-1 0 0 1 40 340 Tm
-(## 6. One-time Project Setup) Tj
-1 0 0 1 40 326 Tm
-() Tj
-1 0 0 1 40 312 Tm
-(## 6.1 Install dependencies) Tj
-1 0 0 1 40 298 Tm
-() Tj
-1 0 0 1 40 284 Tm
-(```powershell) Tj
-1 0 0 1 40 270 Tm
-(npm install) Tj
-1 0 0 1 40 256 Tm
-(```) Tj
-1 0 0 1 40 242 Tm
-() Tj
-1 0 0 1 40 228 Tm
-(## 6.2 Create `.env`) Tj
-1 0 0 1 40 214 Tm
-() Tj
-1 0 0 1 40 200 Tm
-(Create `.env` in repo root with real values.) Tj
-1 0 0 1 40 186 Tm
-() Tj
-1 0 0 1 40 172 Tm
-(Template:) Tj
-1 0 0 1 40 158 Tm
-() Tj
-1 0 0 1 40 144 Tm
-(```dotenv) Tj
-1 0 0 1 40 130 Tm
-(SN_INSTANCE_URL=https://your-instance.service-now.com) Tj
-1 0 0 1 40 116 Tm
-(SN_MCP_URL=https://your-instance.service-now.com/sncapps/mcp-server/mcp/sn_mcp_server_default) Tj
-1 0 0 1 40 102 Tm
-(SN_OAUTH_TOKEN_URL=https://your-instance.service-now.com/oauth_token.do) Tj
-1 0 0 1 40 88 Tm
-(SN_CLIENT_ID=your_client_id) Tj
-1 0 0 1 40 74 Tm
-(SN_CLIENT_SECRET=your_client_secret) Tj
-1 0 0 1 40 60 Tm
-(SN_AUTH_MODE=oauth) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 427.39 Tm
+(1.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 427.39 Tm
+(src/index.ts - stdio MCP bridge server.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 412.89 Tm
+(2.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 412.89 Tm
+(src/config.ts - env parsing and validation.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 398.39 Tm
+(3.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 398.39 Tm
+(src/oauthTokenManager.ts - OAuth token lifecycle.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 383.89 Tm
+(4.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 383.89 Tm
+(src/mcpHttpClient.ts - remote MCP HTTP client and parsing.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 369.39 Tm
+(5.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 369.39 Tm
+(src/proxy.ts - proxy setup from env.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 354.89 Tm
+(6.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 354.89 Tm
+(src/promptRouter.ts - prompt entrypoint and output formatting.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 340.39 Tm
+(7.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 340.39 Tm
+(src/agent/router/intentRouter.ts - intent-to-tool mapping.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 325.89 Tm
+(8.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 325.89 Tm
+(src/agent/orchestrator/promptRunner.ts - execution and normalization.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 311.39 Tm
+(9.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 311.39 Tm
+(src/agent/orchestrator/mcpRuntimeClient.ts - in-process tool runtime client.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 296.89 Tm
+(10.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 296.89 Tm
+(.mcp.json - MCPorter server configuration.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 282.39 Tm
+(11.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 282.39 Tm
+(.env.example - required and optional environment variables.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 267.89 Tm
+(12.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 267.89 Tm
+(README.md - project usage reference.) Tj
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 233.39 Tm
+(5. Prerequisites) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 198.39 Tm
+(1.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 198.39 Tm
+(Windows PowerShell \(or compatible shell\).) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 183.89 Tm
+(2.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 183.89 Tm
+(Node.js 20+.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 169.39 Tm
+(3.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 169.39 Tm
+(npm 10+.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 154.89 Tm
+(4.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 154.89 Tm
+(ServiceNow OAuth client credentials.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 140.39 Tm
+(5.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 140.39 Tm
+(ServiceNow MCP endpoint URL.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 125.89 Tm
+(6.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 125.89 Tm
+(Corporate proxy details if required.) Tj
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 91.39 Tm
+(6. One-time Project Setup) Tj
 ET
 endstream
 endobj
 7 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 19 0 R >> >> /Contents 8 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /Helvetica 19 0 R /Helvetica-Bold 20 0 R /Courier 21 0 R >> >> /Contents 8 0 R >>
 endobj
 8 0 obj
-<< /Length 2195 >>
+<< /Length 4454 >>
 stream
+0.040 0.240 0.570 rg
 BT
-/F1 10 Tf
-1 0 0 1 40 802 Tm
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 787.89 Tm
+(6.1 Install dependencies) Tj
+ET
+0.950 0.960 0.980 rg
+54.00 735.89 487.28 21.00 re f
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 750.89 Tm
+(npm install) Tj
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 715.89 Tm
+(6.2 Create .env) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 680.89 Tm
+(Create .env in repo root with real values.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 659.39 Tm
+(Template:) Tj
+ET
+0.950 0.960 0.980 rg
+54.00 422.89 487.28 219.00 re f
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 635.89 Tm
+(SN_INSTANCE_URL=https://your-instance.service-now.com) Tj
+ET
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 624.89 Tm
+(SN_MCP_URL=https://your-instance.service-now.com/sncapps/mcp-server/mcp/sn_mcp_server_default) Tj
+ET
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 613.89 Tm
+(SN_OAUTH_TOKEN_URL=https://your-instance.service-now.com/oauth_token.do) Tj
+ET
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 602.89 Tm
+(SN_CLIENT_ID=your_client_id) Tj
+ET
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 591.89 Tm
+(SN_CLIENT_SECRET=your_client_secret) Tj
+ET
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 580.89 Tm
+(SN_AUTH_MODE=oauth) Tj
+ET
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 569.89 Tm
 (SN_OAUTH_SCOPE=) Tj
-1 0 0 1 40 788 Tm
+ET
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 558.89 Tm
 () Tj
-1 0 0 1 40 774 Tm
+ET
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 547.89 Tm
 (LOG_LEVEL=info) Tj
-1 0 0 1 40 760 Tm
+ET
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 536.89 Tm
 () Tj
-1 0 0 1 40 746 Tm
+ET
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 525.89 Tm
 (HTTPS_PROXY=http://localhost:9000) Tj
-1 0 0 1 40 732 Tm
+ET
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 514.89 Tm
 (HTTP_PROXY=http://localhost:9000) Tj
-1 0 0 1 40 718 Tm
+ET
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 503.89 Tm
 (NO_PROXY=localhost,127.0.0.1) Tj
-1 0 0 1 40 704 Tm
+ET
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 492.89 Tm
 () Tj
-1 0 0 1 40 690 Tm
+ET
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 481.89 Tm
 (MCPORTER_CALL_TIMEOUT=180000) Tj
-1 0 0 1 40 676 Tm
+ET
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 470.89 Tm
 (PROMPT_VERBOSE=0) Tj
-1 0 0 1 40 662 Tm
+ET
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 459.89 Tm
 (PROMPT_CACHE_LOOKUP_TTL_MS=60000) Tj
-1 0 0 1 40 648 Tm
+ET
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 448.89 Tm
 (PROMPT_CACHE_SUMMARY_TTL_MS=600000) Tj
-1 0 0 1 40 634 Tm
+ET
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 437.89 Tm
 (PROMPT_SUMMARY_SOFT_TIMEOUT_MS=30000) Tj
-1 0 0 1 40 620 Tm
-(```) Tj
-1 0 0 1 40 606 Tm
-() Tj
-1 0 0 1 40 592 Tm
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 416.89 Tm
 (Important:) Tj
-1 0 0 1 40 578 Tm
-() Tj
-1 0 0 1 40 564 Tm
-(1. Never commit `.env`.) Tj
-1 0 0 1 40 550 Tm
-(2. Rotate secrets if they were exposed in logs/chat.) Tj
-1 0 0 1 40 536 Tm
-() Tj
-1 0 0 1 40 522 Tm
-(## 6.3 Build project) Tj
-1 0 0 1 40 508 Tm
-() Tj
-1 0 0 1 40 494 Tm
-(```powershell) Tj
-1 0 0 1 40 480 Tm
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 395.39 Tm
+(1.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 395.39 Tm
+(Never commit .env.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 380.89 Tm
+(2.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 380.89 Tm
+(Rotate secrets if they were exposed in logs/chat.) Tj
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 346.39 Tm
+(6.3 Build project) Tj
+ET
+0.950 0.960 0.980 rg
+54.00 294.39 487.28 21.00 re f
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 309.39 Tm
 (npm run build) Tj
-1 0 0 1 40 466 Tm
-(```) Tj
-1 0 0 1 40 452 Tm
-() Tj
-1 0 0 1 40 438 Tm
-(## 7. Running and Testing Paths) Tj
-1 0 0 1 40 424 Tm
-() Tj
-1 0 0 1 40 410 Tm
-(## 7.1 Preferred end-user path \(prompt only\)) Tj
-1 0 0 1 40 396 Tm
-() Tj
-1 0 0 1 40 382 Tm
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 274.39 Tm
+(7. Running and Testing Paths) Tj
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 225.39 Tm
+(7.1 Preferred end-user path \(prompt only\)) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 190.39 Tm
 (Use this for production-like UX testing:) Tj
-1 0 0 1 40 368 Tm
-() Tj
-1 0 0 1 40 354 Tm
-(```powershell) Tj
-1 0 0 1 40 340 Tm
+ET
+0.950 0.960 0.980 rg
+54.00 129.89 487.28 43.00 re f
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 166.89 Tm
 (npm run prompt -- "show latest 5 incidents") Tj
-1 0 0 1 40 326 Tm
+ET
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 155.89 Tm
 (npm run prompt -- "please summarize INC1639945") Tj
-1 0 0 1 40 312 Tm
+ET
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 144.89 Tm
 (npm run prompt -- "show latest 5 incidents assigned to A Alexson Hentry") Tj
-1 0 0 1 40 298 Tm
-(```) Tj
-1 0 0 1 40 284 Tm
-() Tj
-1 0 0 1 40 270 Tm
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 123.89 Tm
 (Expected behavior:) Tj
-1 0 0 1 40 256 Tm
-() Tj
-1 0 0 1 40 242 Tm
-(1. Formatted output only.) Tj
-1 0 0 1 40 228 Tm
-(2. No raw envelope unless verbose mode is enabled.) Tj
-1 0 0 1 40 214 Tm
-() Tj
-1 0 0 1 40 200 Tm
-(## 7.2 Bridge runtime path) Tj
-1 0 0 1 40 186 Tm
-() Tj
-1 0 0 1 40 172 Tm
-(```powershell) Tj
-1 0 0 1 40 158 Tm
-(npm run dev) Tj
-1 0 0 1 40 144 Tm
-(```) Tj
-1 0 0 1 40 130 Tm
-() Tj
-1 0 0 1 40 116 Tm
-(or) Tj
-1 0 0 1 40 102 Tm
-() Tj
-1 0 0 1 40 88 Tm
-(```powershell) Tj
-1 0 0 1 40 74 Tm
-(npm run build) Tj
-1 0 0 1 40 60 Tm
-(npm run start) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 102.39 Tm
+(1.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 102.39 Tm
+(Formatted output only.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 87.89 Tm
+(2.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 87.89 Tm
+(No raw envelope unless verbose mode is enabled.) Tj
 ET
 endstream
 endobj
 9 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 19 0 R >> >> /Contents 10 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /Helvetica 19 0 R /Helvetica-Bold 20 0 R /Courier 21 0 R >> >> /Contents 10 0 R >>
 endobj
 10 0 obj
-<< /Length 2572 >>
+<< /Length 4535 >>
 stream
+0.040 0.240 0.570 rg
 BT
-/F1 10 Tf
-1 0 0 1 40 802 Tm
-(```) Tj
-1 0 0 1 40 788 Tm
-() Tj
-1 0 0 1 40 774 Tm
-(## 7.3 Smoke test path) Tj
-1 0 0 1 40 760 Tm
-() Tj
-1 0 0 1 40 746 Tm
-(```powershell) Tj
-1 0 0 1 40 732 Tm
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 787.89 Tm
+(7.2 Bridge runtime path) Tj
+ET
+0.950 0.960 0.980 rg
+54.00 735.89 487.28 21.00 re f
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 750.89 Tm
+(npm run dev) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 729.89 Tm
+(or) Tj
+ET
+0.950 0.960 0.980 rg
+54.00 680.39 487.28 32.00 re f
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 706.39 Tm
+(npm run build) Tj
+ET
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 695.39 Tm
+(npm run start) Tj
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 660.39 Tm
+(7.3 Smoke test path) Tj
+ET
+0.950 0.960 0.980 rg
+54.00 608.39 487.28 21.00 re f
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 623.39 Tm
 (npm run test:smoke) Tj
-1 0 0 1 40 718 Tm
-(```) Tj
-1 0 0 1 40 704 Tm
-() Tj
-1 0 0 1 40 690 Tm
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 602.39 Tm
 (Validates:) Tj
-1 0 0 1 40 676 Tm
-() Tj
-1 0 0 1 40 662 Tm
-(1. OAuth token retrieval.) Tj
-1 0 0 1 40 648 Tm
-(2. `initialize`.) Tj
-1 0 0 1 40 634 Tm
-(3. `tools/list`.) Tj
-1 0 0 1 40 620 Tm
-() Tj
-1 0 0 1 40 606 Tm
-(## 7.4 MCPorter direct path \(diagnostics only\)) Tj
-1 0 0 1 40 592 Tm
-() Tj
-1 0 0 1 40 578 Tm
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 580.89 Tm
+(1.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 580.89 Tm
+(OAuth token retrieval.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 566.39 Tm
+(2.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 566.39 Tm
+(initialize.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 551.89 Tm
+(3.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 551.89 Tm
+(tools/list.) Tj
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 517.39 Tm
+(7.4 MCPorter direct path \(diagnostics only\)) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 482.39 Tm
 (Use this when debugging protocol/tool issues, not for standard user flow.) Tj
-1 0 0 1 40 564 Tm
-() Tj
-1 0 0 1 40 550 Tm
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 460.89 Tm
 (List tools:) Tj
-1 0 0 1 40 536 Tm
-() Tj
-1 0 0 1 40 522 Tm
-(```powershell) Tj
-1 0 0 1 40 508 Tm
+ET
+0.950 0.960 0.980 rg
+54.00 422.39 487.28 21.00 re f
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 437.39 Tm
 (npx --yes mcporter --config ".\\.mcp.json" list servicenow-local-bridge --schema --timeout 120000) Tj
-1 0 0 1 40 494 Tm
-(```) Tj
-1 0 0 1 40 480 Tm
-() Tj
-1 0 0 1 40 466 Tm
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 416.39 Tm
 (Call lookup:) Tj
-1 0 0 1 40 452 Tm
-() Tj
-1 0 0 1 40 438 Tm
-(```powershell) Tj
-1 0 0 1 40 424 Tm
+ET
+0.950 0.960 0.980 rg
+54.00 377.89 487.28 21.00 re f
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 392.89 Tm
 (npx --yes mcporter --config ".\\.mcp.json" call servicenow-local-bridge.look_up_incident_records limit=1 --timeout 180000) Tj
-1 0 0 1 40 410 Tm
-(```) Tj
-1 0 0 1 40 396 Tm
-() Tj
-1 0 0 1 40 382 Tm
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 371.89 Tm
 (Call summarize:) Tj
-1 0 0 1 40 368 Tm
-() Tj
-1 0 0 1 40 354 Tm
-(```powershell) Tj
-1 0 0 1 40 340 Tm
+ET
+0.950 0.960 0.980 rg
+54.00 333.39 487.28 21.00 re f
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 348.39 Tm
 (npx --yes mcporter --config ".\\.mcp.json" call servicenow-local-bridge.incident_summarization incidentNumber=INC1639945 --timeout 180000) Tj
-1 0 0 1 40 326 Tm
-(```) Tj
-1 0 0 1 40 312 Tm
-() Tj
-1 0 0 1 40 298 Tm
-(## 8. Why Long Env Prefix Commands Appeared Earlier) Tj
-1 0 0 1 40 284 Tm
-() Tj
-1 0 0 1 40 270 Tm
-(During troubleshooting, commands were run with inline `$env:` assignments for reliability across fresh shells.) Tj
-1 0 0 1 40 256 Tm
-() Tj
-1 0 0 1 40 242 Tm
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 313.39 Tm
+(8. Why Long Env Prefix Commands Appeared Earlier) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 278.39 Tm
+(During troubleshooting, commands were run with inline $env: assignments for reliability) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 264.89 Tm
+(across fresh shells.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 243.39 Tm
 (Current best practice:) Tj
-1 0 0 1 40 228 Tm
-() Tj
-1 0 0 1 40 214 Tm
-(1. Put all values in `.env`.) Tj
-1 0 0 1 40 200 Tm
-(2. Prompt command auto-loads `.env`.) Tj
-1 0 0 1 40 186 Tm
-(3. Run only short prompt commands.) Tj
-1 0 0 1 40 172 Tm
-() Tj
-1 0 0 1 40 158 Tm
-(## 9. Prompt Behavior and Dynamic Logic) Tj
-1 0 0 1 40 144 Tm
-() Tj
-1 0 0 1 40 130 Tm
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 221.89 Tm
+(1.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 221.89 Tm
+(Put all values in .env.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 207.39 Tm
+(2.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 207.39 Tm
+(Prompt command auto-loads .env.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 192.89 Tm
+(3.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 192.89 Tm
+(Run only short prompt commands.) Tj
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 158.39 Tm
+(9. Prompt Behavior and Dynamic Logic) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 123.39 Tm
 (Supported intent behaviors:) Tj
-1 0 0 1 40 116 Tm
-() Tj
-1 0 0 1 40 102 Tm
-(1. Incident number detected \(`INC...`\) -> summarize tool.) Tj
-1 0 0 1 40 88 Tm
-(2. Non-incident prompt -> lookup tool.) Tj
-1 0 0 1 40 74 Tm
-(3. Dynamic extraction of limit and common filters \(status/priority\).) Tj
-1 0 0 1 40 60 Tm
-(4. Dynamic extraction of `assigned_to` names from prompt text.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 101.89 Tm
+(1.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 101.89 Tm
+(Incident number detected \(INC...\) -> summarize tool.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 87.39 Tm
+(2.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 87.39 Tm
+(Non-incident prompt -> lookup tool.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 72.89 Tm
+(3.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 72.89 Tm
+(Dynamic extraction of limit and common filters \(status/priority\).) Tj
 ET
 endstream
 endobj
 11 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 19 0 R >> >> /Contents 12 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /Helvetica 19 0 R /Helvetica-Bold 20 0 R /Courier 21 0 R >> >> /Contents 12 0 R >>
 endobj
 12 0 obj
-<< /Length 2592 >>
+<< /Length 5042 >>
 stream
+0.120 0.160 0.220 rg
 BT
-/F1 10 Tf
-1 0 0 1 40 802 Tm
-() Tj
-1 0 0 1 40 788 Tm
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 787.89 Tm
+(4.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 787.89 Tm
+(Dynamic extraction of assigned_to names from prompt text.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 767.39 Tm
 (Note on boundaries:) Tj
-1 0 0 1 40 774 Tm
-() Tj
-1 0 0 1 40 760 Tm
-(1. Filtering by assignment group requires backend tool support for `assignment_group`.) Tj
-1 0 0 1 40 746 Tm
-(2. Current tool schema reliably supports `assigned_to` user matching.) Tj
-1 0 0 1 40 732 Tm
-() Tj
-1 0 0 1 40 718 Tm
-(## 10. Output Modes) Tj
-1 0 0 1 40 704 Tm
-() Tj
-1 0 0 1 40 690 Tm
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 745.89 Tm
+(1.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 745.89 Tm
+(Filtering by assignment group requires backend tool support for assignment_group.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 731.39 Tm
+(2.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 731.39 Tm
+(Current tool schema reliably supports assigned_to user matching.) Tj
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 696.89 Tm
+(10. Output Modes) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 661.89 Tm
 (Default mode:) Tj
-1 0 0 1 40 676 Tm
-() Tj
-1 0 0 1 40 662 Tm
-(1. Results only \(formatted table or summary text\).) Tj
-1 0 0 1 40 648 Tm
-(2. No internal metrics envelope printed.) Tj
-1 0 0 1 40 634 Tm
-() Tj
-1 0 0 1 40 620 Tm
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 640.39 Tm
+(1.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 640.39 Tm
+(Results only \(formatted table or summary text\).) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 625.89 Tm
+(2.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 625.89 Tm
+(No internal metrics envelope printed.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 605.39 Tm
 (Verbose mode:) Tj
-1 0 0 1 40 606 Tm
-() Tj
-1 0 0 1 40 592 Tm
-(```powershell) Tj
-1 0 0 1 40 578 Tm
+ET
+0.950 0.960 0.980 rg
+54.00 555.89 487.28 32.00 re f
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 581.89 Tm
 ($env:PROMPT_VERBOSE="1") Tj
-1 0 0 1 40 564 Tm
+ET
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 570.89 Tm
 (npm run prompt -- "show latest 5 incidents") Tj
-1 0 0 1 40 550 Tm
-(```) Tj
-1 0 0 1 40 536 Tm
-() Tj
-1 0 0 1 40 522 Tm
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 549.89 Tm
 (Verbose includes internal envelope and metrics.) Tj
-1 0 0 1 40 508 Tm
-() Tj
-1 0 0 1 40 494 Tm
-(## 11. Performance and Reliability Features) Tj
-1 0 0 1 40 480 Tm
-() Tj
-1 0 0 1 40 466 Tm
-(1. OAuth token caching and refresh buffer.) Tj
-1 0 0 1 40 452 Tm
-(2. Retry once on HTTP 401.) Tj
-1 0 0 1 40 438 Tm
-(3. MCP response parsing for JSON/SSE/wrapped variants.) Tj
-1 0 0 1 40 424 Tm
-(4. Prompt response cache with disk persistence:) Tj
-1 0 0 1 40 410 Tm
-(   1. file: `.cache/prompt-cache.json`) Tj
-1 0 0 1 40 396 Tm
-(   2. lookup TTL default: 60s) Tj
-1 0 0 1 40 382 Tm
-(   3. summary TTL default: 10m) Tj
-1 0 0 1 40 368 Tm
-(5. Slow summary warning threshold.) Tj
-1 0 0 1 40 354 Tm
-(6. Summarization fallback to lookup when possible.) Tj
-1 0 0 1 40 340 Tm
-() Tj
-1 0 0 1 40 326 Tm
-(## 12. Proxy Guidance) Tj
-1 0 0 1 40 312 Tm
-() Tj
-1 0 0 1 40 298 Tm
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 514.39 Tm
+(11. Performance and Reliability Features) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 479.39 Tm
+(1.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 479.39 Tm
+(OAuth token caching and refresh buffer.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 464.89 Tm
+(2.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 464.89 Tm
+(Retry once on HTTP 401.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 450.39 Tm
+(3.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 450.39 Tm
+(MCP response parsing for JSON/SSE/wrapped variants.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 435.89 Tm
+(4.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 435.89 Tm
+(Prompt response cache with disk persistence:) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 421.39 Tm
+(1. file: .cache/prompt-cache.json) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 405.89 Tm
+(2. lookup TTL default: 60s) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 390.39 Tm
+(3. summary TTL default: 10m) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 374.89 Tm
+(5.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 374.89 Tm
+(Slow summary warning threshold.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 360.39 Tm
+(6.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 360.39 Tm
+(Summarization fallback to lookup when possible.) Tj
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 325.89 Tm
+(12. Proxy Guidance) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 290.89 Tm
 (If your network needs a proxy:) Tj
-1 0 0 1 40 284 Tm
-() Tj
-1 0 0 1 40 270 Tm
-(1. Set `HTTPS_PROXY`, optionally `HTTP_PROXY`.) Tj
-1 0 0 1 40 256 Tm
-(2. Keep `NO_PROXY=localhost,127.0.0.1`.) Tj
-1 0 0 1 40 242 Tm
-(3. Verify proxy listener:) Tj
-1 0 0 1 40 228 Tm
-() Tj
-1 0 0 1 40 214 Tm
-(```powershell) Tj
-1 0 0 1 40 200 Tm
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 269.39 Tm
+(1.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 269.39 Tm
+(Set HTTPS_PROXY, optionally HTTP_PROXY.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 254.89 Tm
+(2.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 254.89 Tm
+(Keep NO_PROXY=localhost,127.0.0.1.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 240.39 Tm
+(3.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 240.39 Tm
+(Verify proxy listener:) Tj
+ET
+0.950 0.960 0.980 rg
+54.00 202.89 487.28 21.00 re f
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 217.89 Tm
 (Test-NetConnection localhost -Port 9000) Tj
-1 0 0 1 40 186 Tm
-(```) Tj
-1 0 0 1 40 172 Tm
-() Tj
-1 0 0 1 40 158 Tm
-(## 13. Troubleshooting Guide) Tj
-1 0 0 1 40 144 Tm
-() Tj
-1 0 0 1 40 130 Tm
-(## 13.1 No results returned) Tj
-1 0 0 1 40 116 Tm
-() Tj
-1 0 0 1 40 102 Tm
-(1. Validate user/group value exists in ServiceNow.) Tj
-1 0 0 1 40 88 Tm
-(2. Check whether prompt asked for unsupported field \(for example `assignment_group`\).) Tj
-1 0 0 1 40 74 Tm
-(3. Run direct lookup with a known assignee.) Tj
-1 0 0 1 40 60 Tm
-() Tj
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 182.89 Tm
+(13. Troubleshooting Guide) Tj
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 133.89 Tm
+(13.1 No results returned) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 98.89 Tm
+(1.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 98.89 Tm
+(Validate user/group value exists in ServiceNow.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 84.39 Tm
+(2.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 84.39 Tm
+(Check whether prompt asked for unsupported field \(for example assignment_group\).) Tj
 ET
 endstream
 endobj
 13 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 19 0 R >> >> /Contents 14 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /Helvetica 19 0 R /Helvetica-Bold 20 0 R /Courier 21 0 R >> >> /Contents 14 0 R >>
 endobj
 14 0 obj
-<< /Length 2700 >>
+<< /Length 5387 >>
 stream
+0.120 0.160 0.220 rg
 BT
-/F1 10 Tf
-1 0 0 1 40 802 Tm
-(## 13.2 Prompt too slow) Tj
-1 0 0 1 40 788 Tm
-() Tj
-1 0 0 1 40 774 Tm
-(1. Summarization can be naturally slow upstream.) Tj
-1 0 0 1 40 760 Tm
-(2. Increase `MCPORTER_CALL_TIMEOUT`.) Tj
-1 0 0 1 40 746 Tm
-(3. Re-run same prompt to use cache.) Tj
-1 0 0 1 40 732 Tm
-(4. Keep summary timeout high for production realism.) Tj
-1 0 0 1 40 718 Tm
-() Tj
-1 0 0 1 40 704 Tm
-(## 13.3 Unexpected raw JSON) Tj
-1 0 0 1 40 690 Tm
-() Tj
-1 0 0 1 40 676 Tm
-(1. Ensure default prompt mode is used.) Tj
-1 0 0 1 40 662 Tm
-(2. Ensure `PROMPT_VERBOSE` is not `1`.) Tj
-1 0 0 1 40 648 Tm
-(3. Pull latest code where table formatter is included.) Tj
-1 0 0 1 40 634 Tm
-() Tj
-1 0 0 1 40 620 Tm
-(## 13.4 Auth failures) Tj
-1 0 0 1 40 606 Tm
-() Tj
-1 0 0 1 40 592 Tm
-(1. Verify client ID/secret/token URL.) Tj
-1 0 0 1 40 578 Tm
-(2. Confirm OAuth client grants are enabled.) Tj
-1 0 0 1 40 564 Tm
-(3. Rotate secret if exposure occurred.) Tj
-1 0 0 1 40 550 Tm
-() Tj
-1 0 0 1 40 536 Tm
-(## 13.5 VS Code asks for Allow during agent-executed commands) Tj
-1 0 0 1 40 522 Tm
-() Tj
-1 0 0 1 40 508 Tm
-(1. This is VS Code agent security gating.) Tj
-1 0 0 1 40 494 Tm
-(2. It is not application behavior.) Tj
-1 0 0 1 40 480 Tm
-(3. End users in production should interact with prompt interface, not run agent-executed terminal commands.) Tj
-1 0 0 1 40 466 Tm
-() Tj
-1 0 0 1 40 452 Tm
-(## 14. Security Checklist) Tj
-1 0 0 1 40 438 Tm
-() Tj
-1 0 0 1 40 424 Tm
-(1. `.env` remains git-ignored.) Tj
-1 0 0 1 40 410 Tm
-(2. No secrets in code or docs.) Tj
-1 0 0 1 40 396 Tm
-(3. Secret rotation policy defined.) Tj
-1 0 0 1 40 382 Tm
-(4. Redacted logs enabled.) Tj
-1 0 0 1 40 368 Tm
-(5. Least-privilege ServiceNow integration user.) Tj
-1 0 0 1 40 354 Tm
-() Tj
-1 0 0 1 40 340 Tm
-(## 15. Operational SOP for New Team Members) Tj
-1 0 0 1 40 326 Tm
-() Tj
-1 0 0 1 40 312 Tm
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 787.89 Tm
+(3.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 787.89 Tm
+(Run direct lookup with a known assignee.) Tj
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 753.39 Tm
+(13.2 Prompt too slow) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 718.39 Tm
+(1.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 718.39 Tm
+(Summarization can be naturally slow upstream.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 703.89 Tm
+(2.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 703.89 Tm
+(Increase MCPORTER_CALL_TIMEOUT.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 689.39 Tm
+(3.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 689.39 Tm
+(Re-run same prompt to use cache.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 674.89 Tm
+(4.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 674.89 Tm
+(Keep summary timeout high for production realism.) Tj
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 640.39 Tm
+(13.3 Unexpected raw JSON) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 605.39 Tm
+(1.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 605.39 Tm
+(Ensure default prompt mode is used.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 590.89 Tm
+(2.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 590.89 Tm
+(Ensure PROMPT_VERBOSE is not 1.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 576.39 Tm
+(3.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 576.39 Tm
+(Pull latest code where table formatter is included.) Tj
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 541.89 Tm
+(13.4 Auth failures) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 506.89 Tm
+(1.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 506.89 Tm
+(Verify client ID/secret/token URL.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 492.39 Tm
+(2.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 492.39 Tm
+(Confirm OAuth client grants are enabled.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 477.89 Tm
+(3.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 477.89 Tm
+(Rotate secret if exposure occurred.) Tj
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 443.39 Tm
+(13.5 VS Code asks for Allow during agent-executed) Tj
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 424.39 Tm
+(commands) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 389.39 Tm
+(1.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 389.39 Tm
+(This is VS Code agent security gating.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 374.89 Tm
+(2.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 374.89 Tm
+(It is not application behavior.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 360.39 Tm
+(3.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 360.39 Tm
+(End users in production should interact with prompt interface, not run agent-executed) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 346.89 Tm
+(terminal commands.) Tj
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 312.39 Tm
+(14. Security Checklist) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 277.39 Tm
+(1.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 277.39 Tm
+(.env remains git-ignored.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 262.89 Tm
+(2.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 262.89 Tm
+(No secrets in code or docs.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 248.39 Tm
+(3.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 248.39 Tm
+(Secret rotation policy defined.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 233.89 Tm
+(4.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 233.89 Tm
+(Redacted logs enabled.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 219.39 Tm
+(5.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 219.39 Tm
+(Least-privilege ServiceNow integration user.) Tj
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 184.89 Tm
+(15. Operational SOP for New Team Members) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 149.89 Tm
 (Day-1 onboarding:) Tj
-1 0 0 1 40 298 Tm
-() Tj
-1 0 0 1 40 284 Tm
-(1. Clone repo.) Tj
-1 0 0 1 40 270 Tm
-(2. `npm install`.) Tj
-1 0 0 1 40 256 Tm
-(3. Copy `.env.example` to `.env` and populate real values.) Tj
-1 0 0 1 40 242 Tm
-(4. `npm run build`.) Tj
-1 0 0 1 40 228 Tm
-(5. `npm run test:smoke`.) Tj
-1 0 0 1 40 214 Tm
-(6. `npm run prompt -- "show latest 5 incidents"`.) Tj
-1 0 0 1 40 200 Tm
-(7. `npm run prompt -- "please summarize INC1639945"`.) Tj
-1 0 0 1 40 186 Tm
-() Tj
-1 0 0 1 40 172 Tm
-(Daily usage:) Tj
-1 0 0 1 40 158 Tm
-() Tj
-1 0 0 1 40 144 Tm
-(1. Use prompt commands only.) Tj
-1 0 0 1 40 130 Tm
-(2. Avoid direct MCPorter commands unless debugging.) Tj
-1 0 0 1 40 116 Tm
-(3. Keep outputs in results-only mode.) Tj
-1 0 0 1 40 102 Tm
-() Tj
-1 0 0 1 40 88 Tm
-(## 16. Commands Reference \(Quick Copy\)) Tj
-1 0 0 1 40 74 Tm
-() Tj
-1 0 0 1 40 60 Tm
-(Build:) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 128.39 Tm
+(1.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 128.39 Tm
+(Clone repo.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 113.89 Tm
+(2.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 113.89 Tm
+(npm install.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 99.39 Tm
+(3.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 99.39 Tm
+(Copy .env.example to .env and populate real values.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 84.89 Tm
+(4.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 84.89 Tm
+(npm run build.) Tj
 ET
 endstream
 endobj
 15 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 19 0 R >> >> /Contents 16 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /Helvetica 19 0 R /Helvetica-Bold 20 0 R /Courier 21 0 R >> >> /Contents 16 0 R >>
 endobj
 16 0 obj
-<< /Length 2394 >>
+<< /Length 5326 >>
 stream
+0.120 0.160 0.220 rg
 BT
-/F1 10 Tf
-1 0 0 1 40 802 Tm
-() Tj
-1 0 0 1 40 788 Tm
-(```powershell) Tj
-1 0 0 1 40 774 Tm
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 787.89 Tm
+(5.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 787.89 Tm
+(npm run test:smoke.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 773.39 Tm
+(6.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 773.39 Tm
+(npm run prompt -- "show latest 5 incidents".) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 758.89 Tm
+(7.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 758.89 Tm
+(npm run prompt -- "please summarize INC1639945".) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 738.39 Tm
+(Daily usage:) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 716.89 Tm
+(1.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 716.89 Tm
+(Use prompt commands only.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 702.39 Tm
+(2.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 702.39 Tm
+(Avoid direct MCPorter commands unless debugging.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 687.89 Tm
+(3.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 687.89 Tm
+(Keep outputs in results-only mode.) Tj
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 653.39 Tm
+(16. Commands Reference \(Quick Copy\)) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 618.39 Tm
+(Build:) Tj
+ET
+0.950 0.960 0.980 rg
+54.00 579.89 487.28 21.00 re f
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 594.89 Tm
 (npm run build) Tj
-1 0 0 1 40 760 Tm
-(```) Tj
-1 0 0 1 40 746 Tm
-() Tj
-1 0 0 1 40 732 Tm
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 573.89 Tm
 (Smoke test:) Tj
-1 0 0 1 40 718 Tm
-() Tj
-1 0 0 1 40 704 Tm
-(```powershell) Tj
-1 0 0 1 40 690 Tm
+ET
+0.950 0.960 0.980 rg
+54.00 535.39 487.28 21.00 re f
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 550.39 Tm
 (npm run test:smoke) Tj
-1 0 0 1 40 676 Tm
-(```) Tj
-1 0 0 1 40 662 Tm
-() Tj
-1 0 0 1 40 648 Tm
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 529.39 Tm
 (Latest incidents:) Tj
-1 0 0 1 40 634 Tm
-() Tj
-1 0 0 1 40 620 Tm
-(```powershell) Tj
-1 0 0 1 40 606 Tm
+ET
+0.950 0.960 0.980 rg
+54.00 490.89 487.28 21.00 re f
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 505.89 Tm
 (npm run prompt -- "show latest 10 incidents") Tj
-1 0 0 1 40 592 Tm
-(```) Tj
-1 0 0 1 40 578 Tm
-() Tj
-1 0 0 1 40 564 Tm
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 484.89 Tm
 (Assignee filter:) Tj
-1 0 0 1 40 550 Tm
-() Tj
-1 0 0 1 40 536 Tm
-(```powershell) Tj
-1 0 0 1 40 522 Tm
+ET
+0.950 0.960 0.980 rg
+54.00 446.39 487.28 21.00 re f
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 461.39 Tm
 (npm run prompt -- "show latest 5 incidents assigned to A Alexson Hentry") Tj
-1 0 0 1 40 508 Tm
-(```) Tj
-1 0 0 1 40 494 Tm
-() Tj
-1 0 0 1 40 480 Tm
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 440.39 Tm
 (Summary:) Tj
-1 0 0 1 40 466 Tm
-() Tj
-1 0 0 1 40 452 Tm
-(```powershell) Tj
-1 0 0 1 40 438 Tm
+ET
+0.950 0.960 0.980 rg
+54.00 401.89 487.28 21.00 re f
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 416.89 Tm
 (npm run prompt -- "please summarize INC1639945") Tj
-1 0 0 1 40 424 Tm
-(```) Tj
-1 0 0 1 40 410 Tm
-() Tj
-1 0 0 1 40 396 Tm
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 395.89 Tm
 (Verbose mode:) Tj
-1 0 0 1 40 382 Tm
-() Tj
-1 0 0 1 40 368 Tm
-(```powershell) Tj
-1 0 0 1 40 354 Tm
+ET
+0.950 0.960 0.980 rg
+54.00 346.39 487.28 32.00 re f
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 372.39 Tm
 ($env:PROMPT_VERBOSE="1") Tj
-1 0 0 1 40 340 Tm
+ET
+0.100 0.100 0.120 rg
+BT
+/Courier 9 Tf
+1 0 0 1 60.00 361.39 Tm
 (npm run prompt -- "show latest 5 incidents") Tj
-1 0 0 1 40 326 Tm
-(```) Tj
-1 0 0 1 40 312 Tm
-() Tj
-1 0 0 1 40 298 Tm
-(## 17. Change History Highlights) Tj
-1 0 0 1 40 284 Tm
-() Tj
-1 0 0 1 40 270 Tm
-(1. Bridge and proxy/auth stack implemented.) Tj
-1 0 0 1 40 256 Tm
-(2. MCP response compatibility hardening added.) Tj
-1 0 0 1 40 242 Tm
-(3. Prompt router/orchestrator introduced.) Tj
-1 0 0 1 40 228 Tm
-(4. Results-only output mode enabled.) Tj
-1 0 0 1 40 214 Tm
-(5. Table formatting for lookup results enabled.) Tj
-1 0 0 1 40 200 Tm
-(6. `.env` auto-load for prompt mode enabled.) Tj
-1 0 0 1 40 186 Tm
-(7. In-process runtime execution path added for production-like prompt testing.) Tj
-1 0 0 1 40 172 Tm
-() Tj
-1 0 0 1 40 158 Tm
-(## 18. Handover Notes) Tj
-1 0 0 1 40 144 Tm
-() Tj
-1 0 0 1 40 130 Tm
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 326.39 Tm
+(17. Change History Highlights) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 291.39 Tm
+(1.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 291.39 Tm
+(Bridge and proxy/auth stack implemented.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 276.89 Tm
+(2.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 276.89 Tm
+(MCP response compatibility hardening added.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 262.39 Tm
+(3.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 262.39 Tm
+(Prompt router/orchestrator introduced.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 247.89 Tm
+(4.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 247.89 Tm
+(Results-only output mode enabled.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 233.39 Tm
+(5.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 233.39 Tm
+(Table formatting for lookup results enabled.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 218.89 Tm
+(6.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 218.89 Tm
+(.env auto-load for prompt mode enabled.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 204.39 Tm
+(7.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 204.39 Tm
+(In-process runtime execution path added for production-like prompt testing.) Tj
+ET
+0.040 0.240 0.570 rg
+BT
+/Helvetica-Bold 17 Tf
+1 0 0 1 54.00 169.89 Tm
+(18. Handover Notes) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 54.00 134.89 Tm
 (For production rollout alignment:) Tj
-1 0 0 1 40 116 Tm
-() Tj
-1 0 0 1 40 102 Tm
-(1. Prefer always-on service deployment for bridge.) Tj
-1 0 0 1 40 88 Tm
-(2. Integrate secrets from secure secret store.) Tj
-1 0 0 1 40 74 Tm
-(3. Keep prompt UX stable and command-free for end users.) Tj
-1 0 0 1 40 60 Tm
-(4. Extend tool schema in ServiceNow for richer fields like `assignment_group` when required.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 113.39 Tm
+(1.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 113.39 Tm
+(Prefer always-on service deployment for bridge.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 98.89 Tm
+(2.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 98.89 Tm
+(Integrate secrets from secure secret store.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 84.39 Tm
+(3.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 84.39 Tm
+(Keep prompt UX stable and command-free for end users.) Tj
 ET
 endstream
 endobj
 17 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 19 0 R >> >> /Contents 18 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /Helvetica 19 0 R /Helvetica-Bold 20 0 R /Courier 21 0 R >> >> /Contents 18 0 R >>
 endobj
 18 0 obj
-<< /Length 39 >>
+<< /Length 320 >>
 stream
+0.120 0.160 0.220 rg
 BT
-/F1 10 Tf
-1 0 0 1 40 802 Tm
-() Tj
+/Helvetica-Bold 10.5 Tf
+1 0 0 1 54.00 787.89 Tm
+(4.) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 787.89 Tm
+(Extend tool schema in ServiceNow for richer fields like assignment_group when) Tj
+ET
+0.120 0.160 0.220 rg
+BT
+/Helvetica 10.5 Tf
+1 0 0 1 64.00 774.39 Tm
+(required.) Tj
 ET
 endstream
 endobj
 19 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+20 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+21 0 obj
 << /Type /Font /Subtype /Type1 /BaseFont /Courier >>
 endobj
 xref
-0 20
+0 22
 0000000000 65535 f 
 0000000009 00000 n 
 0000000058 00000 n 
 0000000163 00000 n 
-0000000290 00000 n 
-0000003361 00000 n 
-0000003488 00000 n 
-0000006462 00000 n 
-0000006589 00000 n 
-0000008836 00000 n 
-0000008964 00000 n 
-0000011589 00000 n 
-0000011718 00000 n 
-0000014363 00000 n 
-0000014492 00000 n 
-0000017245 00000 n 
-0000017374 00000 n 
-0000019821 00000 n 
-0000019950 00000 n 
-0000020040 00000 n 
+0000000342 00000 n 
+0000005156 00000 n 
+0000005335 00000 n 
+0000011757 00000 n 
+0000011936 00000 n 
+0000016442 00000 n 
+0000016622 00000 n 
+0000021210 00000 n 
+0000021391 00000 n 
+0000026486 00000 n 
+0000026667 00000 n 
+0000032107 00000 n 
+0000032288 00000 n 
+0000037667 00000 n 
+0000037848 00000 n 
+0000038220 00000 n 
+0000038291 00000 n 
+0000038367 00000 n 
 trailer
-<< /Size 20 /Root 1 0 R >>
+<< /Size 22 /Root 1 0 R >>
 startxref
-20109
+38436
 %%EOF
